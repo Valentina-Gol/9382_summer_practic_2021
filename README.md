@@ -8,7 +8,7 @@
 
 Формат входных и выходных данных: массив чисел типа int, файл типа txt;
 
-![image](https://user-images.githubusercontent.com/54913485/124331581-278d0f80-db98-11eb-85f7-dafbd4978ebc.png)
+![image](https://user-images.githubusercontent.com/54913485/124332413-16450280-db9a-11eb-808d-52a9947ec762.png)
 
 План разработки приложения:  
 
