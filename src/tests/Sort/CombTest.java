@@ -1,16 +1,17 @@
-package Sort;
+package src.tests.Sort;
 
-import Sort.Comb;
+
 import org.junit.Assert;
-import java.lang.Math;
+import org.junit.Test;
+import src.logic.Sort.Comb;
 
 import java.util.Arrays;
-import org.junit.Test;
+
 
 public class CombTest {
 
     @Test
-    public void sortAscending() {
+    public void combSortAscending() {
         int[] arr1 = new int[0];
         int[] arr2 = new int[10];
         int[] arr3 = new int[100];
@@ -27,16 +28,16 @@ public class CombTest {
         Arrays.sort(arr2ResAuto);
         Arrays.sort(arr3ResAuto);
 
-        int[] arr1ResProg = new Comb(arr1).sortAscending();
-        int[] arr2ResProg = new Comb(arr2).sortAscending();
-        int[] arr3ResProg = new Comb(arr3).sortAscending();
+        int[] arr1ResProg = new Comb().sortAscending(arr1);
+        int[] arr2ResProg = new Comb().sortAscending(arr2);
+        int[] arr3ResProg = new Comb().sortAscending(arr3);
         Assert.assertArrayEquals(arr1ResAuto, arr1ResProg);
         Assert.assertArrayEquals(arr2ResAuto, arr2ResProg);
         Assert.assertArrayEquals(arr3ResAuto, arr3ResProg);
     }
 
     @Test
-    public void sortDescending() {
+    public void combSortDescending() {
         int[] arr1 = new int[0];
         int[] arr2 = new int[10];
         int[] arr3 = new int[100];
@@ -64,9 +65,9 @@ public class CombTest {
             arr3ResAuto[i] = arr3ResAuto[arr3Len - i - 1];
             arr3ResAuto[arr3Len - i - 1] = current;
         }
-        int[] arr1ResProg = new Comb(arr1).sortDescending();
-        int[] arr2ResProg = new Comb(arr2).sortDescending();
-        int[] arr3ResProg = new Comb(arr3).sortDescending();
+        int[] arr1ResProg = new Comb().sortDescending(arr1);
+        int[] arr2ResProg = new Comb().sortDescending(arr2);
+        int[] arr3ResProg = new Comb().sortDescending(arr3);
         Assert.assertArrayEquals(arr1ResAuto, arr1ResProg);
         Assert.assertArrayEquals(arr2ResAuto, arr2ResProg);
         Assert.assertArrayEquals(arr3ResAuto, arr3ResProg);

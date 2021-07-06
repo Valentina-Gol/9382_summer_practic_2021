@@ -1,8 +1,11 @@
-package FileManager;
+package src.logic.FileManager;
 import java.io.*;
 import java.util.*;
+import org.apache.log4j.Logger;
+import src.logic.Sort.EvenOdd;
 
 public class FileManager {
+    private static final Logger log = Logger.getLogger(EvenOdd.class);
     /**
      * читает из файла числа, записанные по одному в строке
      * @param filename имя файла для чтения чисел
@@ -24,12 +27,16 @@ public class FileManager {
                 array[i] = arrayL.get(i);
             }
         } catch (FileNotFoundException e) {
+            log.error("File not found");
             System.out.println("File not found");
         } catch (IOException e) {
+            log.error("IO trouble");
             System.out.println("IO trouble");
         } catch (NumberFormatException e) {
+            log.error("Bad number format");
             System.out.println("Bad number format");
         } catch (Exception e) {
+            log.error("Some trouble when reading a file");
             System.out.println("Some trouble when reading a file");
         }
         return array;
@@ -45,6 +52,7 @@ public class FileManager {
         try {
             boolean val = myObj.createNewFile();
         } catch (IOException e) {
+            log.error("An error when creating file");
             System.out.println("An error when creating file");
             flagE = true;
         }
@@ -66,6 +74,7 @@ public class FileManager {
             myWriter.close();
             return true;
         } catch (IOException e) {
+            log.error("An error when writing in file");
             System.out.println("An error when writing in file");
             return false;
         }

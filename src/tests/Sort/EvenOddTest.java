@@ -2,14 +2,14 @@ package src.tests.Sort;
 
 import org.junit.Assert;
 import org.junit.Test;
-import src.logic.Sort.Shaker;
+import src.logic.Sort.EvenOdd;
 
 import java.util.Arrays;
 
-public class ShakerTest {
+public class EvenOddTest {
 
     @Test
-    public void shakerSortAscending() {
+    public void evenOddSortAscending() {
         int[] arr1 = new int[0];
         int[] arr2 = new int[10];
         int[] arr3 = new int[100];
@@ -26,9 +26,9 @@ public class ShakerTest {
         Arrays.sort(arr2ResAuto);
         Arrays.sort(arr3ResAuto);
 
-        int[] arr1ResProg = new Shaker().sortAscending(arr1);
-        int[] arr2ResProg = new Shaker().sortAscending(arr2);
-        int[] arr3ResProg = new Shaker().sortAscending(arr3);
+        int[] arr1ResProg = new EvenOdd().sortAscending(arr1);
+        int[] arr2ResProg = new EvenOdd().sortAscending(arr2);
+        int[] arr3ResProg = new EvenOdd().sortAscending(arr3);
         Assert.assertArrayEquals(arr1ResAuto, arr1ResProg);
         Assert.assertArrayEquals(arr2ResAuto, arr2ResProg);
         Assert.assertArrayEquals(arr3ResAuto, arr3ResProg);
@@ -63,9 +63,9 @@ public class ShakerTest {
             arr3ResAuto[i] = arr3ResAuto[arr3Len - i - 1];
             arr3ResAuto[arr3Len - i - 1] = current;
         }
-        int[] arr1ResProg = new Shaker().sortDescending(arr1);
-        int[] arr2ResProg = new Shaker().sortDescending(arr2);
-        int[] arr3ResProg = new Shaker().sortDescending(arr3);
+        int[] arr1ResProg = new EvenOdd().sortDescending(arr1);
+        int[] arr2ResProg = new EvenOdd().sortDescending(arr2);
+        int[] arr3ResProg = new EvenOdd().sortDescending(arr3);
         Assert.assertArrayEquals(arr1ResAuto, arr1ResProg);
         Assert.assertArrayEquals(arr2ResAuto, arr2ResProg);
         Assert.assertArrayEquals(arr3ResAuto, arr3ResProg);
