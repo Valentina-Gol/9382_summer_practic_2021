@@ -1,5 +1,9 @@
 package logic;
 
+/**
+ * класс для хранения массива для сортировки
+ * реализован с помщью паттерна Singleton
+ */
 public class DataClass {
 
     private static DataClass dataClass = new DataClass( );

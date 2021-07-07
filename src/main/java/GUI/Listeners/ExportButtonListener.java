@@ -9,6 +9,10 @@ import java.awt.event.ActionListener;
 import java.io.File;
 
 public class ExportButtonListener implements ActionListener {
+    /**
+     * реализует функционал нажатия на кнопку экспорта(сохранение массива)
+     * @param event
+     */
     public void actionPerformed(ActionEvent event){
         try {
             JFrame jFrame = new JFrame();
