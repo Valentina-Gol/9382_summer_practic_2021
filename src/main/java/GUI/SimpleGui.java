@@ -28,9 +28,7 @@ public class SimpleGui {
         GridBagConstraints layConstraints;
 
         JPanel eastPanel = new JPanel();
-        JPanel eastPanel2 = new JPanel();
         eastPanel.setBorder(new EmptyBorder(4, 4, 4, 4)); // отступ внутри панели на 4 пикселя со всех сторон
-        eastPanel2.setBorder(new EmptyBorder(4, 4, 4, 4)); // отступ внутри панели на 4 пикселя со всех сторон
         GridBagLayout layout = new GridBagLayout();
         layout.rowHeights = new int[]{23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23}; // высоты кнопок
         layout.rowWeights = new double[26];
@@ -67,28 +65,26 @@ public class SimpleGui {
         layConstraints = getGridBagConstraints(7, 1, 2);
         eastPanel.add(startButton, layConstraints);
 
-        eastPanel2.setLayout(layout);
         //reset
         JButton resetButton = new JButton("reset");
         layConstraints = getGridBagConstraints(22,  1, 1);
-        eastPanel2.add(resetButton, layConstraints);
+        eastPanel.add(resetButton, layConstraints);
 
         //play
         JButton nextButton = new JButton("next");
         layConstraints = getGridBagConstraints(22, 2, 1);
-        eastPanel2.add(nextButton, layConstraints);
+        eastPanel.add(nextButton, layConstraints);
 
         //next
         JButton playButton = new JButton("play");
         layConstraints = getGridBagConstraints(23, 1, 2);
-        eastPanel2.add(playButton, layConstraints);
+        eastPanel.add(playButton, layConstraints);
 
 
 
         frame.setSize(900, 600);
         frame.setMinimumSize(new Dimension(900, 600));
         frame.getContentPane().add(eastPanel, BorderLayout.WEST);
-        frame.getContentPane().add(eastPanel2, BorderLayout.LINE_END);
         frame.setVisible(true);
 
     }
