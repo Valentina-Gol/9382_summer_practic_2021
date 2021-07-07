@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34d86193-5dea-4c86-b0c7-801b778a9481" name="Default Changelist" comment="" />
+    <list default="true" id="34d86193-5dea-4c86-b0c7-801b778a9481" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/9382_summer_practic_2021.iml" beforeDir="false" afterPath="$PROJECT_DIR$/9382_summer_practic_2021.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sort/Comb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sort/Comb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sort/EvenOdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sort/EvenOdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sort/Shaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sort/Shaker.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,11 +41,21 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI.SimpleGui" />
+      <module name="9382_summer_practic_2021" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -41,5 +67,16 @@
       <updated>1625667299110</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

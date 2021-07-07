@@ -4,6 +4,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
+import GUI.Listeners.IOButtonListener;
+
 public class SimpleGui {
 
     private GridBagConstraints getGridBagConstraints(int col, int row, int size) {
@@ -41,6 +43,7 @@ public class SimpleGui {
         //import
         String[] importItems = {"Create array", "Import from the file", "Create an array randomly", "Set array"};
         JComboBox importBox = new JComboBox(importItems);
+        importBox.addActionListener(new IOButtonListener());
         layConstraints = getGridBagConstraints(1, 1, 1);
         eastPanel.add(importBox, layConstraints); // добавление кнопки на панель с учётом разметки
 

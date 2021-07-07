@@ -1,4 +1,7 @@
 package logic.Sort;
+
+import logic.DataClass;
+
 /**
  * Класс для шейкерной сортировки, хранит массив и текущие элементы для сравнения в нём
  */
@@ -12,8 +15,8 @@ public class Shaker implements Sort {
         int count = 0;
         while (count != array.length / 2){
             while (i < array.length - 1 - count){
-//                elem1 = array[i];
-//                elem2 = array[i+1];
+                DataClass.getInstance().elem1 = array[i];
+                DataClass.getInstance().elem2 = array[i + 1];
                 if (array[i + 1] < array[i]) {
                     int current = array[i];
                     array[i] = array[i + 1];
@@ -22,8 +25,8 @@ public class Shaker implements Sort {
                 i++;
             }
             while (i > count){
-//                elem1 = array[i - 1];
-//                elem2 = array[i];
+                DataClass.getInstance().elem1 = array[i - 1];
+                DataClass.getInstance().elem2 = array[i];
                 if (array[i - 1] > array[i]) {
                     int current = array[i];
                     array[i] = array[i - 1];
