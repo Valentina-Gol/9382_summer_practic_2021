@@ -46,7 +46,7 @@ public class SimpleGui extends javax.swing.JFrame {
 
         frame.getContentPane().add(splitPane);
         splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);  // we want it to split the window verticaly
-        splitPane.setDividerLocation(250);                    // the initial position of the divider is 200 (our window is 400 pixels high)
+        splitPane.setDividerLocation(300);                    // the initial position of the divider is 200 (our window is 400 pixels high)
         splitPane.setTopComponent(leftPanel);                  // at the top we want our "topPanel"
         splitPane.setBottomComponent(rightPanel);
         leftPanel.setLayout(layout);
@@ -106,8 +106,8 @@ public class SimpleGui extends javax.swing.JFrame {
         playerPanel.add(playButton);
 
         frame.getContentPane().setBackground(Color.RED);
-        frame.setSize(900, 670);
-        frame.setMinimumSize(new Dimension(900, 670));
+        frame.setSize(1200, 900);
+        frame.setMinimumSize(new Dimension(1200, 900));
         frame.getContentPane().add(mainPanel, BorderLayout.WEST);
         pack();
         frame.setVisible(true);

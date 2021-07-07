@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34d86193-5dea-4c86-b0c7-801b778a9481" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/IOButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/SimpleGui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GUI/SortButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/ArrayManager/ArrayHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/DataClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/FileManager/FileManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/Sort/Comb.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/Sort/EvenOdd.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/Sort/Shaker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/logic/Sort/Sort.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Sort/CombTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Sort/EvenOddTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Sort/ShakerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Sort/SortTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
