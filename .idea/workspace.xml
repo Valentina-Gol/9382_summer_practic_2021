@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34d86193-5dea-4c86-b0c7-801b778a9481" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/Sort/CombTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/Sort/EvenOddTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/Sort/ShakerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tests/Sort/SortTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-    </list>
+    <list default="true" id="34d86193-5dea-4c86-b0c7-801b778a9481" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
