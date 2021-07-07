@@ -70,7 +70,7 @@
 
                     <archive>
                         <manifest>
-                            <mainClass>Main</mainClass>
+                            <mainClass>GUI.SimpleGui</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
