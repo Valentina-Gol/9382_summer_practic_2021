@@ -46,7 +46,7 @@ public class SimpleGui extends javax.swing.JFrame {
 
         frame.getContentPane().add(splitPane);
         splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);  // we want it to split the window verticaly
-        splitPane.setDividerLocation(300);                    // the initial position of the divider is 200 (our window is 400 pixels high)
+        splitPane.setDividerLocation(250);                    // the initial position of the divider is 200 (our window is 400 pixels high)
         splitPane.setTopComponent(leftPanel);                  // at the top we want our "topPanel"
         splitPane.setBottomComponent(rightPanel);
         leftPanel.setLayout(layout);
@@ -70,14 +70,19 @@ public class SimpleGui extends javax.swing.JFrame {
         leftPanel.add(sortBox, layConstraints);
 
         //Speed
-        String[] speedItems = {"Choose speed of auto sort", "x1", "x2", "x4"};
-        JComboBox speedBox = new JComboBox(speedItems);
+        JLabel speedLabel = new JLabel("Choose speed of auto sort");
         layConstraints = getGridBagConstraints(5, 1, 2);
-        leftPanel.add(speedBox, layConstraints);
+        leftPanel.add(speedLabel, layConstraints);
 
+        JSlider speedSlider = new JSlider(1, 4, 1);
+        speedSlider.setPaintTrack(true);
+        speedSlider.setPaintLabels(true);
+        speedSlider.setMajorTickSpacing(1);
+        layConstraints = getGridBagConstraints(6, 1, 2);
+        leftPanel.add(speedSlider, layConstraints);
         //Start sorting
         JButton startButton = new JButton("Start sorting");
-        layConstraints = getGridBagConstraints(7, 1, 2);
+        layConstraints = getGridBagConstraints(8, 1, 2);
         leftPanel.add(startButton, layConstraints);
 
         /*
@@ -92,7 +97,7 @@ public class SimpleGui extends javax.swing.JFrame {
         rightPanel.add(playerPanel, BorderLayout.SOUTH);
         //reset
         JButton resetButton = new JButton("reset");
-        //       layConstraints = getGridBagConstraints(24,  1, 1);
+ //       layConstraints = getGridBagConstraints(24,  1, 1);
         playerPanel.add(resetButton);
 
         //play
@@ -106,8 +111,8 @@ public class SimpleGui extends javax.swing.JFrame {
         playerPanel.add(playButton);
 
         frame.getContentPane().setBackground(Color.RED);
-        frame.setSize(1200, 900);
-        frame.setMinimumSize(new Dimension(1200, 900));
+        frame.setSize(900, 670);
+        frame.setMinimumSize(new Dimension(900, 670));
         frame.getContentPane().add(mainPanel, BorderLayout.WEST);
         pack();
         frame.setVisible(true);
