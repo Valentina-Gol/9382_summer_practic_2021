@@ -90,32 +90,42 @@ public class SimpleGui extends javax.swing.JFrame {
          * строк и столбцов в таблице. Вторые 2 параметра - расстояние между
          * ячейками по горизонтали и вертикали
          */
-        JPanel sortPanel = new JPanel();
+
         JPanel playerPanel = new JPanel(new GridLayout(1, 3, 5, 0) );
         rightPanel.setLayout( new FlowLayout(FlowLayout.CENTER));
-        rightPanel.add(sortPanel, BorderLayout.NORTH);
-        rightPanel.add(playerPanel, BorderLayout.SOUTH);
+        rightPanel.add(playerPanel, BorderLayout.NORTH);
         //reset
         JButton resetButton = new JButton("reset");
- //       layConstraints = getGridBagConstraints(24,  1, 1);
         playerPanel.add(resetButton);
 
         //play
         JButton nextButton = new JButton("next");
-//        layConstraints = getGridBagConstraints(24, 2, 1);
         playerPanel.add(nextButton);
 
         //next
         JButton playButton = new JButton("play");
-//        layConstraints = getGridBagConstraints(25, 1, 2);
         playerPanel.add(playButton);
 
-        frame.getContentPane().setBackground(Color.RED);
         frame.setSize(900, 670);
         frame.setMinimumSize(new Dimension(900, 670));
         frame.getContentPane().add(mainPanel, BorderLayout.WEST);
         pack();
         frame.setVisible(true);
 
+        //Прокрутка
+        JTextArea textArea = new JTextArea("");
+        textArea.setSize(400,400);
+        textArea.setLineWrap(true);
+        textArea.setEditable(false);
+        textArea.setVisible(true);
+
+        JScrollPane scroll = new JScrollPane (textArea);
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        layConstraints = getGridBagConstraints(10, 1, 2);
+        layConstraints.gridheight = 20;
+        leftPanel.add(scroll, layConstraints);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
