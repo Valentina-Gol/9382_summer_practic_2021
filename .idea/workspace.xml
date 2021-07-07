@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34d86193-5dea-4c86-b0c7-801b778a9481" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/9382_summer_practic_2021.iml" beforeDir="false" afterPath="$PROJECT_DIR$/9382_summer_practic_2021.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Listeners/IOButtonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Listeners/IOButtonListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/ArrayManager/ArrayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/ArrayManager/ArrayHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/FileManager/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/FileManager/text.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Sort/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sort/SortTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,5 +79,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
