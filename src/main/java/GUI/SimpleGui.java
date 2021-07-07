@@ -1,6 +1,7 @@
 package GUI;
 
-import GUI.Listeners.IOButtonListener;
+import GUI.Listeners.ExportButtonListener;
+import GUI.Listeners.InputButtonListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -56,12 +57,13 @@ public class SimpleGui extends javax.swing.JFrame {
         //import
         String[] importItems = {"Create array", "Import from the file", "Create an array randomly", "Set array"};
         JComboBox importBox = new JComboBox(importItems);
-        importBox.addActionListener(new IOButtonListener());
+        importBox.addActionListener(new InputButtonListener());
         layConstraints = getGridBagConstraints(1, 1, 1);
         leftPanel.add(importBox, layConstraints); // добавление кнопки на панель с учётом разметки
 
         //export
         JButton exportButton = new JButton("export");
+        exportButton.addActionListener(new ExportButtonListener());
         layConstraints = getGridBagConstraints(1, 2, 1);
         leftPanel.add(exportButton, layConstraints);
 

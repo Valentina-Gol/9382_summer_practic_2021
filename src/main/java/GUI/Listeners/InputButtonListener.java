@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class IOButtonListener implements ActionListener {
+public class InputButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         int[] arr = null;
         JComboBox comboBox = (JComboBox) event.getSource();
@@ -20,6 +20,7 @@ public class IOButtonListener implements ActionListener {
                 fileName = JOptionPane.showInputDialog(jFrame, "Введите имя файла");
                 arr = FileManager.fileInput(fileName);
             } else if (selected == "Create an array randomly") {
+
 
             } else if (selected == "Set array") {
                 JFrame jFrame = new JFrame();

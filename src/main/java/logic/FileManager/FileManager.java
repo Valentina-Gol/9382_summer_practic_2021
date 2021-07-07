@@ -46,6 +46,7 @@ public class FileManager {
     /**
      * создаёт файл, возвращает произошло ли исключение
      * @param filename имя создаваемого файла
+     * @return возвращает true если при создании файла произошло исключение
      */
     public static boolean CreateFile(String filename) {
         File myObj = new File(filename);
