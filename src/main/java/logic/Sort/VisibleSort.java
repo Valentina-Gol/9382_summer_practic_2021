@@ -1,6 +1,6 @@
-package logic.Sort;
+package main.java.logic.Sort;
 
-import logic.DataClass;
+import main.java.logic.DataClass;
 
 import javax.swing.*;
 import java.awt.*;

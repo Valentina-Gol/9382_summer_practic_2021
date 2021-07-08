@@ -1,11 +1,9 @@
-package GUI;
+package main.java.GUI;
 
-import GUI.Listeners.ExportButtonListener;
-import GUI.Listeners.InputButtonListener;
-import GUI.Listeners.SortButtonListener;
-import GUI.Listeners.SpeedButtonListener;
-import logic.DataClass;
-import logic.Sort.VisibleSort;
+import main.java.GUI.Listeners.*;
+import main.java.logic.DataClass;
+import main.java.logic.Sort.Sort;
+import main.java.logic.Sort.VisibleSort;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -152,7 +150,7 @@ public class SimpleGui extends javax.swing.JFrame {
     }
 
     public void showSort() {
-        var workpan = DataClass.getInstance().sort;
+        Sort workpan = DataClass.getInstance().sort;
         var layConstraints = getGridBagConstraints(1, 0, 1);
         layConstraints.gridheight = 50;
         rightPanel.add((VisibleSort) workpan, layConstraints);
@@ -163,7 +161,7 @@ public class SimpleGui extends javax.swing.JFrame {
         public void actionPerformed(ActionEvent event) {
             DataClass sources = DataClass.getInstance();
             try {
-                if (!(sources.speed == -1 || sources.sort == null || sources.mainArray == null)) {
+                if (!(sources.sort == null || sources.mainArray == null)) {
                     showSort();
                 }
             } catch (Exception e) {

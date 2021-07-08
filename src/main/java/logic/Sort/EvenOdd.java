@@ -1,7 +1,7 @@
-package logic.Sort;
+package main.java.logic.Sort;
 
 
-import logic.DataClass;
+import main.java.logic.DataClass;
 
 public class EvenOdd extends VisibleSort implements Sort,Runnable {
     Thread thread;
