@@ -3,6 +3,7 @@ package GUI;
 import GUI.Listeners.ExportButtonListener;
 import GUI.Listeners.InputButtonListener;
 import GUI.Listeners.SortButtonListener;
+import GUI.Listeners.SpeedButtonListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -82,6 +83,7 @@ public class SimpleGui extends javax.swing.JFrame {
         leftPanel.add(speedLabel, layConstraints);
 
         JSlider speedSlider = new JSlider(1, 4, 1);
+        speedSlider.addChangeListener(new SpeedButtonListener());
         speedSlider.setPaintTrack(true);
         speedSlider.setPaintLabels(true);
         speedSlider.setMajorTickSpacing(1);

@@ -1,23 +1,28 @@
-/*package GUI.Listeners;
+package GUI.Listeners;
 
-import java.awt.Dimension;
-// ww  w.ja  va 2 s .c  om
-import javax.swing.JFrame;
-import javax.swing.JSlider;
+import logic.DataClass;
+
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class SpeedButtonListener {
-        public void stateChanged(ChangeEvent event) {
+public class SpeedButtonListener implements ChangeListener {
+    public void stateChanged(ChangeEvent changeEvent) {
+        Object source = changeEvent.getSource();
+        if (source instanceof JSlider) {
+            JSlider slider = (JSlider) source;
             int value = slider.getValue();
-            if (value == 0) {
-                System.out.println("0");
-            } else if (value > 0 && value <= 30) {
-                System.out.println("value > 0 && value <= 30");
-            } else if (value > 30 && value < 80) {
-                System.out.println("value > 30 && value < 80");
+            if (value == 1) {
+                DataClass.getInstance().speed = 24;
+            } else if (value == 2) {
+                DataClass.getInstance().speed = 12;
+            } else if (value == 3) {
+                DataClass.getInstance().speed = 8;
+            } else if (value == 4) {
+                DataClass.getInstance().speed = 6;
             } else {
-                System.out.println("max");
+                System.out.println("invalid value");
             }
         }
-    }*/
+    }
+}

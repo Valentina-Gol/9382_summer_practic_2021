@@ -1,5 +1,7 @@
 package logic.Sort;
 
+import logic.DataClass;
+
 public class Shaker extends VisibleSort implements Sort,Runnable {
     Thread thread;
 
@@ -21,6 +23,7 @@ public class Shaker extends VisibleSort implements Sort,Runnable {
 
     @Override
     public void startSort() {
+        int speed = DataClass.getInstance().speed;
         try {
             Thread.sleep(5000);
         } catch (Exception e) {
@@ -38,7 +41,7 @@ public class Shaker extends VisibleSort implements Sort,Runnable {
                     arrneedsort.set(current, i + 1);
 
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(speed);
                     } catch (Exception e) {
                     }
                     repaint();
@@ -55,7 +58,7 @@ public class Shaker extends VisibleSort implements Sort,Runnable {
                     arrneedsort.set(current, i - 1);
 
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(speed);
                     } catch (Exception e) {
                     }
                     repaint();

@@ -1,6 +1,8 @@
 package logic.Sort;
 
 
+import logic.DataClass;
+
 public class EvenOdd extends VisibleSort implements Sort,Runnable {
     Thread thread;
     public EvenOdd(){
@@ -19,6 +21,7 @@ public class EvenOdd extends VisibleSort implements Sort,Runnable {
 
     @Override
     public void startSort() {
+        int speed = DataClass.getInstance().speed;
         try {
             Thread.sleep(5000);
         } catch (Exception e) {}
@@ -33,7 +36,7 @@ public class EvenOdd extends VisibleSort implements Sort,Runnable {
                     arrneedsort.set(arrneedsort.get(j+1), j);
                     arrneedsort.set(temp, j+1);
                     try {
-                        Thread.sleep(10);
+                        Thread.sleep(speed);
                     } catch (Exception e) {}
                     repaint();
                 }
