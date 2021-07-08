@@ -1,10 +1,6 @@
 package logic.Sort;
 
-/**
- * интерфейс стандартной сортировки
- */
+interface Sort {
 
-public interface Sort {
-    public int[] sortAscending(int[] arr);
-    public int[] sortDescending(int[] arr);
+    abstract void startSort();
 }

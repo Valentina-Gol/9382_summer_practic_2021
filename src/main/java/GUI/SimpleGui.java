@@ -1,8 +1,9 @@
 package GUI;
 
+import logic.Sort.*;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.basic.BasicSplitPaneUI;
 import java.awt.*;
 
 public class SimpleGui extends javax.swing.JFrame {
@@ -139,13 +140,11 @@ public class SimpleGui extends javax.swing.JFrame {
         leftPanel.add(scroll, layConstraints);
 
     // РАБОЧАЯ ОБЛАСТЬ
-        BubbleSort workpan = new BubbleSort();
+        var workpan = new Comb();
         layConstraints = getGridBagConstraints(1,0,1);
         layConstraints.gridheight = 50;
         rightPanel.add(workpan,layConstraints);
         frame.setVisible(true);
-
-
 
     }
 }

@@ -1,52 +1,50 @@
 package logic.Sort;
-import java.lang.Math;
-import logic.DataClass;
 
-public class Comb implements Sort {
-    /**
-     * Метод сортировки массива по возрастанию элементов
-     * @return возвращает массив чисел типа int
-     */
-    public int[] sortAscending(int[] array){
-        int gap = array.length;
-        int j;
-        while (gap > 1){
-            gap = Math.max(1, (int)(gap / 1.25));  // minimum gap is 1
-            for (int i = 0; i < array.length - gap; i++){
-                j = i + gap;
-                DataClass.getInstance().elem1 = array[i];
-                DataClass.getInstance().elem2 = array[j];
-                if (array[i] > array[j]){
-                    int current = array[i];
-                    array[i] = array[j];
-                    array[j] = current;
-                }
-            }
-        }
-        return array;
+public class Comb extends VisibleSort implements Sort,Runnable {
+    Thread thread;
+
+    public Comb(){
+        thread = new Thread(this);
+        thread.start();
     }
 
-    /**
-     * Метод сортировки массива по убыванию элементов
-     * @return возвращает массив чисел типа int
-     */
-    public int[] sortDescending(int[] array){
-        int gap = array.length;
+    @Override
+    public void run() {
+        while(true) {
+            try {
+                startSort();
+            } catch (Exception e) {}
+        }
+
+    }
+
+    @Override
+    public void startSort() {
+        try {
+            Thread.sleep(5000);
+        } catch (Exception e) {}
+        int gap = arrneedsort.leg();
         int j;
         while (gap > 1){
             gap = Math.max(1, (int)(gap / 1.25));  // minimum gap is 1
-            for (int i = 0; i < array.length - gap; i++){
+            for (int i = 0; i < arrneedsort.leg() - gap; i++){
                 j = i + gap;
-                DataClass.getInstance().elem1 = array[i];
-                DataClass.getInstance().elem2 = array[j];
-                if (array[i] < array[j]){
-                    int current = array[i];
-                    array[i] = array[j];
-                    array[j] = current;
+//                DataClass.getInstance().elem1 = array[i];
+//                DataClass.getInstance().elem2 = array[j];
+                if (arrneedsort.get(i) > arrneedsort.get(j)){
+                    int current = arrneedsort.get(i);
+                    arrneedsort.set(arrneedsort.get(j), i);
+                    arrneedsort.set(current, j);
+                    try {
+                        Thread.sleep(10);
+                    } catch (Exception e) {}
+                    repaint();
                 }
             }
         }
-        return array;
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e) {}
     }
 }
 

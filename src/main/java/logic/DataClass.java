@@ -1,21 +1,31 @@
 package logic;
 
-/**
- * класс для хранения массива для сортировки
- * реализован с помщью паттерна Singleton
- */
 public class DataClass {
 
-    private static DataClass dataClass = new DataClass( );
+    private static DataClass dataClass = new DataClass();
 
-    private DataClass() { }
+    private DataClass() {
+    }
 
-    public static DataClass getInstance( ) {
+    public static DataClass getInstance() {
+
         return dataClass;
     }
 
-    public int[] mainArray = null;
-    public int elem1 = -1;
-    public int elem2 = -1;
+    public int[] mainArray = {3, 67, 12 , 78, 3, 6, 67, 34, 25, 7, 8};
+//    private int elem1 = -1;
+//    private int elem2 = -1;
 
+    public int get(int i) {
+
+        return mainArray[i];
+    }
+
+    public void set(int temp, int i) {
+
+        mainArray[i] = temp;
+    }
+    public int leg(){
+        return mainArray.length;
+    }
 }
