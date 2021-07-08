@@ -122,7 +122,7 @@ public class SimpleGui extends javax.swing.JFrame {
         frame.setMinimumSize(new Dimension(900, 670));
         frame.getContentPane().add(mainPanel, BorderLayout.WEST);
         pack();
-        frame.setVisible(true);
+
 
         //Прокрутка
         JTextArea textArea = new JTextArea("");
@@ -143,6 +143,7 @@ public class SimpleGui extends javax.swing.JFrame {
         layConstraints = getGridBagConstraints(1,0,1);
         layConstraints.gridheight = 50;
         rightPanel.add(workpan,layConstraints);
+        frame.setVisible(true);
 
 
 
