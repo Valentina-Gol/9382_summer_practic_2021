@@ -1,4 +1,4 @@
-package main.java.logic.ArrayManager;
+package logic.ArrayManager;
 
 import java.util.ArrayList;
 import java.util.List;

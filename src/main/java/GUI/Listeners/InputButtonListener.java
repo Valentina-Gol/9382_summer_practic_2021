@@ -7,6 +7,7 @@ import logic.FileManager.FileManager;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class InputButtonListener implements ActionListener {
     /**
@@ -24,10 +25,15 @@ public class InputButtonListener implements ActionListener {
         Object selected = comboBox.getSelectedItem();
         try {
             if (selected == "Import from the file") {
-                JFrame jFrame = new JFrame();
-                String fileName = null;
-                fileName = JOptionPane.showInputDialog(jFrame, "Введите имя файла");
-                arr = FileManager.fileInput(fileName);
+                JFrame frame = new JFrame();
+                JFileChooser fileChooser = new JFileChooser();
+                int option = fileChooser.showOpenDialog(frame);
+                if(option == JFileChooser.APPROVE_OPTION) {
+                    File file = fileChooser.getSelectedFile();
+                    arr = FileManager.fileInput(file);
+                } else {
+                    System.out.println("Nothing entered");
+                }
             } else if (selected == "Create an array randomly") {
                 JFrame jFrame = new JFrame();
                 String arrayString = null;
