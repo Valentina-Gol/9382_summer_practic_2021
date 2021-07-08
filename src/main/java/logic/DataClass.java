@@ -15,9 +15,9 @@ public class DataClass {
         return dataClass;
     }
 
-    public int[] mainArray = {3, 67, 12 , 78, 3, 6, 67, 34, 25, 7, 8};
-    public Sort sort;
-    public int speed;
+    public int[] mainArray = null;
+    public Sort sort = null;
+    public int speed = -1;
 //    private int elem1 = -1;
 //    private int elem2 = -1;
 

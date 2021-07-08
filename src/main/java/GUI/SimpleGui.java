@@ -4,14 +4,20 @@ import GUI.Listeners.ExportButtonListener;
 import GUI.Listeners.InputButtonListener;
 import GUI.Listeners.SortButtonListener;
 import GUI.Listeners.SpeedButtonListener;
+import logic.DataClass;
+import logic.Sort.VisibleSort;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SimpleGui extends javax.swing.JFrame {
-    private  JPanel inputPanel;
-    private  JSplitPane splitPane;
+    private final JPanel mainPanel = new JPanel();
+    private final JPanel leftPanel = new JPanel();
+    private final JPanel rightPanel = new JPanel();
+    JFrame frame = new JFrame("Program");
 
     public SimpleGui() {
     }
@@ -31,16 +37,11 @@ public class SimpleGui extends javax.swing.JFrame {
     }
 
     public void start() {
-
-        JFrame frame = new JFrame("Program");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        splitPane = new JSplitPane();
+        JSplitPane splitPane = new JSplitPane();
         //***************************** Настройка менюшки справа *************************************//
         GridBagConstraints layConstraints;
-        JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.X_AXIS));
-        JPanel leftPanel = new JPanel();
-        JPanel rightPanel = new JPanel();
         mainPanel.add(leftPanel);
         mainPanel.add(rightPanel);
         leftPanel.setBorder(new EmptyBorder(4, 4, 4, 4)); // отступ внутри панели на 4 пикселя со всех сторон
@@ -48,7 +49,7 @@ public class SimpleGui extends javax.swing.JFrame {
         layout.rowHeights = new int[]{23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23}; // высоты кнопок
         layout.rowWeights = new double[26];
         layout.rowWeights[layout.rowWeights.length - 1] = Double.MIN_VALUE;
-        layout.columnWeights = new double[] {1.0};
+        layout.columnWeights = new double[]{1.0};
 
         frame.getContentPane().add(splitPane);
         splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);  // we want it to split the window verticaly
@@ -91,6 +92,8 @@ public class SimpleGui extends javax.swing.JFrame {
         leftPanel.add(speedSlider, layConstraints);
         //Start sorting
         JButton startButton = new JButton("Start sorting");
+        // startButton.setEnabled(false);
+        startButton.addActionListener(new StartsortingListener());
         layConstraints = getGridBagConstraints(8, 1, 2);
         leftPanel.add(startButton, layConstraints);
 
@@ -100,7 +103,7 @@ public class SimpleGui extends javax.swing.JFrame {
          * ячейками по горизонтали и вертикали
          */
 
-        JPanel playerPanel = new JPanel(new GridLayout(1, 3, 5, 0) );
+        JPanel playerPanel = new JPanel(new GridLayout(1, 3, 5, 0));
         var gridLayout = new GridBagLayout();
         gridLayout.rowHeights = layout.rowHeights;
         gridLayout.rowWeights = layout.rowWeights;
@@ -111,7 +114,7 @@ public class SimpleGui extends javax.swing.JFrame {
 
         JPanel downPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         downPanel.add(playerPanel, BorderLayout.NORTH);
-        layConstraints = getGridBagConstraints(0,0,1);
+        layConstraints = getGridBagConstraints(0, 0, 1);
         rightPanel.add(downPanel, layConstraints);
         //reset
         JButton resetButton = new JButton("reset");
@@ -133,24 +136,40 @@ public class SimpleGui extends javax.swing.JFrame {
 
         //Прокрутка
         JTextArea textArea = new JTextArea("");
-        textArea.setSize(400,400);
+        textArea.setSize(400, 400);
         textArea.setLineWrap(true);
         textArea.setEditable(false);
         textArea.setVisible(true);
 
-        JScrollPane scroll = new JScrollPane (textArea);
+        JScrollPane scroll = new JScrollPane(textArea);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         layConstraints = getGridBagConstraints(10, 1, 2);
         layConstraints.gridheight = 20;
         leftPanel.add(scroll, layConstraints);
-
-    // РАБОЧАЯ ОБЛАСТЬ
-       // var workpan = new Comb();
-      //  layConstraints = getGridBagConstraints(1,0,1);
-       // layConstraints.gridheight = 50;
-      //  rightPanel.add(workpan,layConstraints);
         frame.setVisible(true);
 
+    }
+
+    public void showSort() {
+        var workpan = DataClass.getInstance().sort;
+        var layConstraints = getGridBagConstraints(1, 0, 1);
+        layConstraints.gridheight = 50;
+        rightPanel.add((VisibleSort) workpan, layConstraints);
+    }
+
+    public class StartsortingListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent event) {
+            DataClass sources = DataClass.getInstance();
+            try {
+                if (!(sources.speed == -1 || sources.sort == null || sources.mainArray == null)) {
+                    showSort();
+                }
+            } catch (Exception e) {
+                System.out.println("Nothing entered");
+            }
+            frame.setVisible(true);
+        }
     }
 }
