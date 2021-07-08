@@ -94,12 +94,18 @@ public class SimpleGui extends javax.swing.JFrame {
          */
 
         JPanel playerPanel = new JPanel(new GridLayout(1, 3, 5, 0) );
-        var gridLayout = new GridLayout(2, 1, 2,2);
+        var gridLayout = new GridBagLayout();
+        gridLayout.rowHeights = new int[]{23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23}; // высоты кнопок
+        gridLayout.rowWeights = new double[26];
+        gridLayout.rowWeights[layout.rowWeights.length - 1] = Double.MIN_VALUE;
+        gridLayout.columnWeights = new double[] {1.0};
+
         rightPanel.setLayout(gridLayout);
 
         JPanel downPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         downPanel.add(playerPanel, BorderLayout.NORTH);
-        rightPanel.add(downPanel);
+        layConstraints = getGridBagConstraints(0,0,1);
+        rightPanel.add(downPanel, layConstraints);
         //reset
         JButton resetButton = new JButton("reset");
         playerPanel.add(resetButton);
@@ -131,10 +137,14 @@ public class SimpleGui extends javax.swing.JFrame {
         layConstraints = getGridBagConstraints(10, 1, 2);
         layConstraints.gridheight = 20;
         leftPanel.add(scroll, layConstraints);
+
     // РАБОЧАЯ ОБЛАСТЬ
         BubbleSort workpan = new BubbleSort();
-        JPanel work = new JPanel();
-        work.add(workpan);
-        rightPanel.add(work, BorderLayout.SOUTH);
+        layConstraints = getGridBagConstraints(1,0,1);
+        layConstraints.gridheight = 50;
+        rightPanel.add(workpan,layConstraints);
+
+
+
     }
 }
