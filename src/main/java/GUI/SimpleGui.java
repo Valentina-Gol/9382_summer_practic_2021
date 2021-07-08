@@ -1,6 +1,8 @@
 package GUI;
 
-import logic.Sort.*;
+import GUI.Listeners.ExportButtonListener;
+import GUI.Listeners.InputButtonListener;
+import GUI.Listeners.SortButtonListener;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -59,11 +61,12 @@ public class SimpleGui extends javax.swing.JFrame {
         JComboBox importBox = new JComboBox(importItems);
         layConstraints = getGridBagConstraints(1, 1, 1);
         leftPanel.add(importBox, layConstraints); // добавление кнопки на панель с учётом разметки
-
+        importBox.addActionListener(new InputButtonListener());
         //export
         JButton exportButton = new JButton("export");
         layConstraints = getGridBagConstraints(1, 2, 1);
         leftPanel.add(exportButton, layConstraints);
+        exportButton.addActionListener(new ExportButtonListener());
 
 
         //Type of sort
@@ -71,6 +74,7 @@ public class SimpleGui extends javax.swing.JFrame {
         JComboBox sortBox = new JComboBox(sortItems);
         layConstraints = getGridBagConstraints(3, 1, 2);
         leftPanel.add(sortBox, layConstraints);
+        sortBox.addActionListener(new SortButtonListener());
 
         //Speed
         JLabel speedLabel = new JLabel("Choose speed of auto sort");
@@ -96,10 +100,10 @@ public class SimpleGui extends javax.swing.JFrame {
 
         JPanel playerPanel = new JPanel(new GridLayout(1, 3, 5, 0) );
         var gridLayout = new GridBagLayout();
-        gridLayout.rowHeights = new int[]{23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23}; // высоты кнопок
-        gridLayout.rowWeights = new double[26];
-        gridLayout.rowWeights[layout.rowWeights.length - 1] = Double.MIN_VALUE;
-        gridLayout.columnWeights = new double[] {1.0};
+        gridLayout.rowHeights = layout.rowHeights;
+        gridLayout.rowWeights = layout.rowWeights;
+        gridLayout.rowWeights[gridLayout.rowWeights.length - 1] = Double.MIN_VALUE;
+        gridLayout.columnWeights = layout.columnWeights;
 
         rightPanel.setLayout(gridLayout);
 
@@ -140,10 +144,10 @@ public class SimpleGui extends javax.swing.JFrame {
         leftPanel.add(scroll, layConstraints);
 
     // РАБОЧАЯ ОБЛАСТЬ
-        var workpan = new Comb();
-        layConstraints = getGridBagConstraints(1,0,1);
-        layConstraints.gridheight = 50;
-        rightPanel.add(workpan,layConstraints);
+       // var workpan = new Comb();
+      //  layConstraints = getGridBagConstraints(1,0,1);
+       // layConstraints.gridheight = 50;
+      //  rightPanel.add(workpan,layConstraints);
         frame.setVisible(true);
 
     }

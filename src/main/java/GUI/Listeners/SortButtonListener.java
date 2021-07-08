@@ -1,18 +1,36 @@
 package GUI.Listeners;
 
+import logic.DataClass;
+import logic.Sort.Comb;
+import logic.Sort.EvenOdd;
+import logic.Sort.Shaker;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SortButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event){
-
+        int[]arr = null;
         JComboBox comboBox = (JComboBox) event.getSource();
-
-        // Print the selected items and the action command.
         Object selected = comboBox.getSelectedItem();
 
-        System.out.println("Selected Item  = " + selected);
+        try {
+            if (selected == "Odd-Even sorting") {
+                DataClass.getInstance().sort = new EvenOdd();
+            } else if (selected == "Brush sorting") {
+                DataClass.getInstance().sort = new Comb();
+            } else if (selected == "Shaker sorting") {
+                DataClass.getInstance().sort = new Shaker();
+            }
+        } catch(Exception e){
+            System.out.println("Nothing entered");
+        }
+
+
+
+
+        //System.out.println("Selected Item  = " + selected);
 
         }
 

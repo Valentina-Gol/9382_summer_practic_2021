@@ -1,6 +1,6 @@
 package logic.Sort;
 
-interface Sort {
+public interface Sort {
 
     abstract void startSort();
 }

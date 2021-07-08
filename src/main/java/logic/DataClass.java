@@ -1,8 +1,11 @@
 package logic;
 
+import logic.Sort.Sort;
+
 public class DataClass {
 
     private static DataClass dataClass = new DataClass();
+
 
     private DataClass() {
     }
@@ -13,6 +16,7 @@ public class DataClass {
     }
 
     public int[] mainArray = {3, 67, 12 , 78, 3, 6, 67, 34, 25, 7, 8};
+    public Sort sort;
 //    private int elem1 = -1;
 //    private int elem2 = -1;
 
