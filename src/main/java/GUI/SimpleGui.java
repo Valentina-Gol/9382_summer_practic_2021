@@ -1,10 +1,8 @@
 package GUI;
 
-import GUI.Listeners.ExportButtonListener;
-import GUI.Listeners.InputButtonListener;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.basic.BasicSplitPaneUI;
 import java.awt.*;
 
 public class SimpleGui extends javax.swing.JFrame {
@@ -25,6 +23,7 @@ public class SimpleGui extends javax.swing.JFrame {
 
     public static void main(String[] args) {
         new SimpleGui().start();
+
     }
 
     public void start() {
@@ -57,13 +56,11 @@ public class SimpleGui extends javax.swing.JFrame {
         //import
         String[] importItems = {"Create array", "Import from the file", "Create an array randomly", "Set array"};
         JComboBox importBox = new JComboBox(importItems);
-        importBox.addActionListener(new InputButtonListener());
         layConstraints = getGridBagConstraints(1, 1, 1);
         leftPanel.add(importBox, layConstraints); // добавление кнопки на панель с учётом разметки
 
         //export
         JButton exportButton = new JButton("export");
-        exportButton.addActionListener(new ExportButtonListener());
         layConstraints = getGridBagConstraints(1, 2, 1);
         leftPanel.add(exportButton, layConstraints);
 
@@ -97,8 +94,12 @@ public class SimpleGui extends javax.swing.JFrame {
          */
 
         JPanel playerPanel = new JPanel(new GridLayout(1, 3, 5, 0) );
-        rightPanel.setLayout( new FlowLayout(FlowLayout.CENTER));
-        rightPanel.add(playerPanel, BorderLayout.NORTH);
+        var gridLayout = new GridLayout(2, 1, 2,2);
+        rightPanel.setLayout(gridLayout);
+
+        JPanel downPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        downPanel.add(playerPanel, BorderLayout.NORTH);
+        rightPanel.add(downPanel);
         //reset
         JButton resetButton = new JButton("reset");
         playerPanel.add(resetButton);
@@ -130,7 +131,10 @@ public class SimpleGui extends javax.swing.JFrame {
         layConstraints = getGridBagConstraints(10, 1, 2);
         layConstraints.gridheight = 20;
         leftPanel.add(scroll, layConstraints);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    // РАБОЧАЯ ОБЛАСТЬ
+        BubbleSort workpan = new BubbleSort();
+        JPanel work = new JPanel();
+        work.add(workpan);
+        rightPanel.add(work, BorderLayout.SOUTH);
     }
 }
