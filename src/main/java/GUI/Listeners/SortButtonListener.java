@@ -1,9 +1,9 @@
-package main.java.GUI.Listeners;
+package GUI.Listeners;
 
-import main.java.logic.DataClass;
-import main.java.logic.Sort.Comb;
-import main.java.logic.Sort.EvenOdd;
-import main.java.logic.Sort.Shaker;
+import logic.DataClass;
+import logic.Sort.Comb;
+import logic.Sort.EvenOdd;
+import logic.Sort.Shaker;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

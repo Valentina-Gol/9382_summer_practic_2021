@@ -1,4 +1,4 @@
-package main.java.logic.FileManager;
+package logic.FileManager;
 import org.apache.log4j.Logger;
 
 import java.io.*;

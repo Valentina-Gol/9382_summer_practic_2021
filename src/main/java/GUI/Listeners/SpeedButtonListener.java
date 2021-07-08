@@ -1,6 +1,6 @@
-package main.java.GUI.Listeners;
+package GUI.Listeners;
 
-import main.java.logic.DataClass;
+import logic.DataClass;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;

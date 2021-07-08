@@ -1,8 +1,9 @@
-package main.java.GUI.Listeners;
+package GUI.Listeners;
 
 import main.java.logic.ArrayManager.ArrayHandler;
-import main.java.logic.DataClass;
-import main.java.logic.FileManager.FileManager;
+import logic.DataClass;
+import logic.FileManager.FileManager;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

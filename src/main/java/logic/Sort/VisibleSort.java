@@ -1,6 +1,6 @@
-package main.java.logic.Sort;
+package logic.Sort;
 
-import main.java.logic.DataClass;
+import logic.DataClass;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,9 +17,9 @@ public class VisibleSort extends JPanel{
 
 
 
-        for (int i = 0; i < arrneedsort.leg(); i++) {
+        for (int i = 0; i < arrneedsort.mainArray.length; i++) {
             g.setColor(Color.BLACK);
-            g.fillRect(i*10+100,(500-(arrneedsort.get(i)*4)),10, arrneedsort.get(i)*4);
+            g.fillRect(i*10+100,(500-(arrneedsort.mainArray[i]*4)),10, arrneedsort.mainArray[i]*4);
         }
 
     }

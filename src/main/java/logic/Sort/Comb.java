@@ -1,8 +1,10 @@
-package main.java.logic.Sort;
+package logic.Sort;
 
-import main.java.logic.DataClass;
+import logic.DataClass;
+import org.apache.log4j.Logger;
 
 public class Comb extends VisibleSort implements Sort,Runnable {
+    private static final Logger log = Logger.getLogger( Comb.class);
     Thread thread;
 
     public Comb(){
@@ -26,21 +28,22 @@ public class Comb extends VisibleSort implements Sort,Runnable {
         try {
             Thread.sleep(5000);
         } catch (Exception e) {}
-        int gap = arrneedsort.leg();
+        int gap = arrneedsort.mainArray.length;
         int j;
         while (gap > 1){
             gap = Math.max(1, (int)(gap / 1.25));  // minimum gap is 1
-            for (int i = 0; i < arrneedsort.leg() - gap; i++){
+            for (int i = 0; i < arrneedsort.mainArray.length - gap; i++){
                 j = i + gap;
 //                DataClass.getInstance().elem1 = array[i];
 //                DataClass.getInstance().elem2 = array[j];
-                if (arrneedsort.get(i) > arrneedsort.get(j)){
-                    int current = arrneedsort.get(i);
-                    arrneedsort.set(arrneedsort.get(j), i);
-                    arrneedsort.set(current, j);
+                if (arrneedsort.mainArray[i] > arrneedsort.mainArray[j]){
+                    int current = arrneedsort.mainArray[i];
+                    arrneedsort.mainArray[i] = arrneedsort.mainArray[j];
+                    arrneedsort.mainArray[j] = current;
                     try {
                         Thread.sleep(speed);
                     } catch (Exception e) {}
+                    log.debug("File not found");
                     repaint();
                 }
             }

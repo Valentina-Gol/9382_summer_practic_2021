@@ -1,7 +1,7 @@
-package main.java.logic.Sort;
+package logic.Sort;
 
 
-import main.java.logic.DataClass;
+import logic.DataClass;
 
 public class EvenOdd extends VisibleSort implements Sort,Runnable {
     Thread thread;
@@ -25,16 +25,16 @@ public class EvenOdd extends VisibleSort implements Sort,Runnable {
         try {
             Thread.sleep(5000);
         } catch (Exception e) {}
-        int arrLen = arrneedsort.leg(); //длина массива
+        int arrLen = arrneedsort.mainArray.length; //длина массива
         for (int i = 0; i < arrLen; i++) {
             // (i % 2) ? 0 : 1 возвращает 0, если i четное, 1, если i не четное
             for (int j = (i % 2 == 0) ? 0 : 1; j < arrLen - 1; j += 2) {
                 //DataClass.getInstance().elem1 = arrn[j];
                 //DataClass.getInstance().elem2 = arr[j + 1];
-                if (arrneedsort.get(j) > arrneedsort.get(j+1)) {
-                    int temp = arrneedsort.get(j);
-                    arrneedsort.set(arrneedsort.get(j+1), j);
-                    arrneedsort.set(temp, j+1);
+                if (arrneedsort.mainArray[j] > arrneedsort.mainArray[j + 1]) {
+                    int temp = arrneedsort.mainArray[j];
+                    arrneedsort.mainArray[j] = arrneedsort.mainArray[j + 1];
+                    arrneedsort.mainArray[j + 1] = temp;
                     try {
                         Thread.sleep(speed);
                     } catch (Exception e) {}

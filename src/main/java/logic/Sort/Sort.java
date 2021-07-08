@@ -1,4 +1,4 @@
-package main.java.logic.Sort;
+package logic.Sort;
 
 public interface Sort {
 

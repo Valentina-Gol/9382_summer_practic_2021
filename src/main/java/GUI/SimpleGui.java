@@ -1,15 +1,20 @@
-package main.java.GUI;
+package GUI;
 
-import main.java.GUI.Listeners.*;
-import main.java.logic.DataClass;
-import main.java.logic.Sort.Sort;
-import main.java.logic.Sort.VisibleSort;
+import GUI.Listeners.ExportButtonListener;
+import GUI.Listeners.InputButtonListener;
+import GUI.Listeners.SortButtonListener;
+import GUI.Listeners.SpeedButtonListener;
+import logic.DataClass;
+import logic.Sort.Sort;
+import logic.Sort.VisibleSort;
+import org.apache.log4j.BasicConfigurator;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 public class SimpleGui extends javax.swing.JFrame {
     private final JPanel mainPanel = new JPanel();
@@ -30,6 +35,7 @@ public class SimpleGui extends javax.swing.JFrame {
     }
 
     public static void main(String[] args) {
+        BasicConfigurator.configure();
         new SimpleGui().start();
 
     }
@@ -95,6 +101,7 @@ public class SimpleGui extends javax.swing.JFrame {
         layConstraints = getGridBagConstraints(8, 1, 2);
         leftPanel.add(startButton, layConstraints);
 
+
         /*
          * Первые два параметра конструктора GridLayout определяют количество
          * строк и столбцов в таблице. Вторые 2 параметра - расстояние между
@@ -126,9 +133,9 @@ public class SimpleGui extends javax.swing.JFrame {
         JButton playButton = new JButton("play");
         playerPanel.add(playButton);
 
-        frame.setSize(900, 670);
-        frame.setMinimumSize(new Dimension(900, 670));
-        frame.getContentPane().add(mainPanel, BorderLayout.WEST);
+        frame.setSize(1500, 700);
+        frame.setMinimumSize(new Dimension(1500, 700));
+        frame.getContentPane().add(mainPanel, BorderLayout.SOUTH);
         pack();
 
 
@@ -138,6 +145,11 @@ public class SimpleGui extends javax.swing.JFrame {
         textArea.setLineWrap(true);
         textArea.setEditable(false);
         textArea.setVisible(true);
+
+        /*Appender defaultAppender = Logger.getRootLogger().getAppender("app");
+        defaultAppender = new WriterAppender(layout, textArea);
+        writerAppender.append(event);
+        logList.add(stringWriter.toString());*/
 
         JScrollPane scroll = new JScrollPane(textArea);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
