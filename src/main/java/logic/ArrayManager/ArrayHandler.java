@@ -1,5 +1,7 @@
 package logic.ArrayManager;
 
+import logic.MyLogger.TheBestLogger;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,10 @@ public class ArrayHandler {
         } catch (NegativeArraySizeException e){
             System.out.println("Negative array length");
         }
+        if (array.length > 100){
+            System.out.println("Too much size of the array(max size is 100)");
+            return new int[0];
+        }
         return  array;
     }
 
@@ -49,12 +55,12 @@ public class ArrayHandler {
                 arr[i] = Integer.parseInt(arrOfStr[i]);
             }
             if (arr.length > 100){
-                throw new Exception("Too much size of the array");
+                TheBestLogger.getInstance().logException("Too much size of the array(max size is 100)");
             }
         } catch (NumberFormatException e){
-            System.out.println("Wrong number format");
+            TheBestLogger.getInstance().logException("Wrong number format");
         } catch (Exception e){
-            System.out.println(e.getMessage());
+            TheBestLogger.getInstance().logException(e.getMessage());
         }
         return arr;
     }

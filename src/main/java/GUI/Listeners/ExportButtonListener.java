@@ -2,6 +2,7 @@ package GUI.Listeners;
 
 import logic.DataClass;
 import logic.FileManager.FileManager;
+import logic.MyLogger.TheBestLogger;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -22,10 +23,10 @@ public class ExportButtonListener implements ActionListener {
                 File file = fileChooser.getSelectedFile();
                 FileManager.fileOutput(file, DataClass.getInstance().mainArray);
             } else {
-                System.out.println("Nothing entered");
+                TheBestLogger.getInstance().logInfo("Nothing entered");
             }
         } catch(Exception e){
-            System.out.println("Nothing entered");
+            TheBestLogger.getInstance().logInfo("Nothing entered");
         }
     }
 }

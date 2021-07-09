@@ -1,6 +1,7 @@
 package logic.Sort;
 
 import logic.DataClass;
+import logic.MyLogger.TheBestLogger;
 import org.apache.log4j.Logger;
 
 public class Comb extends VisibleSort implements Sort,Runnable {
@@ -43,7 +44,7 @@ public class Comb extends VisibleSort implements Sort,Runnable {
                     try {
                         Thread.sleep(speed);
                     } catch (Exception e) {}
-                    log.debug("File not found");
+                    TheBestLogger.getInstance().logException("File not found");
                     repaint();
                 }
             }

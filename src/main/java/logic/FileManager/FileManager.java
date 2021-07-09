@@ -1,12 +1,12 @@
 package logic.FileManager;
-import org.apache.log4j.Logger;
+
+import logic.MyLogger.TheBestLogger;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileManager {
-    private static final Logger log = Logger.getLogger(FileManager.class);
     /**
      * читает из файла числа, записанные по одному в строке
      * @param file объект файла для чтения чисел
@@ -28,20 +28,16 @@ public class FileManager {
                 array[i] = arrayL.get(i);
             }
         } catch (FileNotFoundException e) {
-            log.error("File not found");
-            System.out.println("File not found");
+            TheBestLogger.getInstance().logException("File not found");
         } catch (IOException e) {
-            log.error("IO trouble");
-            System.out.println("IO trouble");
+            TheBestLogger.getInstance().logException("IO trouble");
         } catch (NumberFormatException e) {
-            log.error("Bad number format");
-            System.out.println("Bad number format");
+            TheBestLogger.getInstance().logException("Bad number format");
         } catch (Exception e) {
-            log.error("Some trouble when reading a file");
-            System.out.println("Some trouble when reading a file");
+            TheBestLogger.getInstance().logException("Some trouble when reading a file");
         }
         if (array.length > 100){
-            System.out.println("Too much size of the array");
+            TheBestLogger.getInstance().logInfo("Too much size of the array(max size is 100)");
             return new int[0];
         }
         return array;
@@ -62,8 +58,7 @@ public class FileManager {
             myWriter.close();
             return true;
         } catch (IOException e) {
-            log.error("An error when writing in file");
-            System.out.println("An error when writing in file");
+            TheBestLogger.getInstance().logException("An error when writing in file");
             return false;
         }
     }

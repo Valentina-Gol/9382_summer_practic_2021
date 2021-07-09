@@ -1,9 +1,11 @@
 package GUI.Listeners;
 
 import logic.DataClass;
+import logic.MyLogger.TheBestLogger;
 import logic.Sort.Comb;
 import logic.Sort.EvenOdd;
 import logic.Sort.Shaker;
+import logic.MyLogger.TheBestLogger;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -24,7 +26,7 @@ public class SortButtonListener implements ActionListener {
                 DataClass.getInstance().sort = new Shaker();
             }
         } catch(Exception e){
-            System.out.println("Nothing entered");
+            TheBestLogger.getInstance().logInfo("Nothing entered");
         }
 
 

@@ -1,6 +1,7 @@
 package GUI.Listeners;
 
 import logic.DataClass;
+import logic.MyLogger.TheBestLogger;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -21,7 +22,7 @@ public class SpeedButtonListener implements ChangeListener {
             } else if (value == 4) {
                 DataClass.getInstance().speed = 6;
             } else {
-                System.out.println("invalid value");
+                TheBestLogger.getInstance().logException("invalid value");
             }
         }
     }

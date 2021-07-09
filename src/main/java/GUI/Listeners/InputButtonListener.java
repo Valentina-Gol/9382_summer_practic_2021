@@ -1,8 +1,9 @@
 package GUI.Listeners;
 
-import main.java.logic.ArrayManager.ArrayHandler;
+import logic.ArrayManager.ArrayHandler;
 import logic.DataClass;
 import logic.FileManager.FileManager;
+import logic.MyLogger.TheBestLogger;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -32,7 +33,7 @@ public class InputButtonListener implements ActionListener {
                     File file = fileChooser.getSelectedFile();
                     arr = FileManager.fileInput(file);
                 } else {
-                    System.out.println("Nothing entered");
+                    TheBestLogger.getInstance().logInfo("Nothing entered");
                 }
             } else if (selected == "Create an array randomly") {
                 JFrame jFrame = new JFrame();
@@ -47,7 +48,7 @@ public class InputButtonListener implements ActionListener {
                 arr = ArrayHandler.splitArrayFromString(arrayString);
             }
         } catch(Exception e){
-            System.out.println("Nothing entered");
+            TheBestLogger.getInstance().logInfo("Nothing entered");
         }
         DataClass.getInstance().mainArray = arr;
     }

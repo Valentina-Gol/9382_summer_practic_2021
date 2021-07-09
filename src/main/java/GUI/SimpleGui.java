@@ -5,6 +5,7 @@ import GUI.Listeners.InputButtonListener;
 import GUI.Listeners.SortButtonListener;
 import GUI.Listeners.SpeedButtonListener;
 import logic.DataClass;
+import logic.MyLogger.TheBestLogger;
 import logic.Sort.Sort;
 import logic.Sort.VisibleSort;
 import org.apache.log4j.BasicConfigurator;
@@ -17,12 +18,18 @@ import java.awt.event.ActionListener;
 
 
 public class SimpleGui extends javax.swing.JFrame {
-    private final JPanel mainPanel = new JPanel();
-    private final JPanel leftPanel = new JPanel();
-    private final JPanel rightPanel = new JPanel();
-    JFrame frame = new JFrame("Program");
+    private JPanel mainPanel = new JPanel();
+    private JPanel leftPanel = new JPanel();
+    private JPanel rightPanel = new JPanel();
+    private JTextArea textArea = new JTextArea("kkj");
+    private JFrame frame = new JFrame("Program");
 
-    public SimpleGui() {
+    //Singleton!
+    private static SimpleGui simpleGui = new SimpleGui();
+    private SimpleGui() {
+    }
+    public static SimpleGui getInstance() {
+        return simpleGui;
     }
 
     private GridBagConstraints getGridBagConstraints(int col, int row, int size) {
@@ -38,6 +45,10 @@ public class SimpleGui extends javax.swing.JFrame {
         BasicConfigurator.configure();
         new SimpleGui().start();
 
+    }
+
+    public static void addInTextArea(String s){
+        simpleGui.textArea.replaceSelection(s);
     }
 
     public void start() {
@@ -138,9 +149,7 @@ public class SimpleGui extends javax.swing.JFrame {
         frame.getContentPane().add(mainPanel, BorderLayout.SOUTH);
         pack();
 
-
         //Прокрутка
-        JTextArea textArea = new JTextArea("");
         textArea.setSize(400, 400);
         textArea.setLineWrap(true);
         textArea.setEditable(false);
@@ -177,7 +186,7 @@ public class SimpleGui extends javax.swing.JFrame {
                     showSort();
                 }
             } catch (Exception e) {
-                System.out.println("Nothing entered");
+                TheBestLogger.getInstance().logInfo("Nothing entered");
             }
             frame.setVisible(true);
         }
