@@ -14,13 +14,13 @@ public class SpeedButtonListener implements ChangeListener {
             JSlider slider = (JSlider) source;
             int value = slider.getValue();
             if (value == 1) {
-                DataClass.getInstance().speed = 24;
+                DataClass.getInstance().speed = 48;
             } else if (value == 2) {
-                DataClass.getInstance().speed = 12;
+                DataClass.getInstance().speed = 24;
             } else if (value == 3) {
-                DataClass.getInstance().speed = 8;
+                DataClass.getInstance().speed = 10;
             } else if (value == 4) {
-                DataClass.getInstance().speed = 6;
+                DataClass.getInstance().speed = 1;
             } else {
                 TheBestLogger.getInstance().logException("invalid value");
             }

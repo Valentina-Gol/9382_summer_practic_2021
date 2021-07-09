@@ -5,7 +5,7 @@ import logic.Sort.Sort;
 public class DataClass {
     public int[] mainArray = null;
     public Sort sort = null;
-    public int speed = 24;
+    public int speed = 48;
 //    private int elem1 = -1;
 //    private int elem2 = -1;
 
