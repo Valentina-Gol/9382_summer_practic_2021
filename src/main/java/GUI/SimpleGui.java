@@ -21,7 +21,7 @@ public class SimpleGui extends javax.swing.JFrame {
     private JPanel mainPanel = new JPanel();
     private JPanel leftPanel = new JPanel();
     private JPanel rightPanel = new JPanel();
-    private JTextArea textArea = new JTextArea("kkj");
+    private JTextArea textArea = new JTextArea("");
     private JFrame frame = new JFrame("Program");
 
     //Singleton!
@@ -48,7 +48,7 @@ public class SimpleGui extends javax.swing.JFrame {
     }
 
     public static void addInTextArea(String s){
-        simpleGui.textArea.replaceSelection(s);
+        simpleGui.textArea.append(s);
     }
 
     public void start() {
