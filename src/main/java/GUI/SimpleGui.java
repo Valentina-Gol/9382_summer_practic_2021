@@ -105,13 +105,6 @@ public class SimpleGui extends javax.swing.JFrame {
         speedSlider.setMajorTickSpacing(1);
         layConstraints = getGridBagConstraints(6, 1, 2);
         leftPanel.add(speedSlider, layConstraints);
-        //Start sorting
-        JButton startButton = new JButton("Start sorting");
-        // startButton.setEnabled(false);
-        startButton.addActionListener(new StartsortingListener());
-        layConstraints = getGridBagConstraints(8, 1, 2);
-        leftPanel.add(startButton, layConstraints);
-
 
         /*
          * Первые два параметра конструктора GridLayout определяют количество
@@ -137,12 +130,14 @@ public class SimpleGui extends javax.swing.JFrame {
         playerPanel.add(resetButton);
 
         //play
+        JButton playButton = new JButton("play");
+        playButton.addActionListener(new PlayListener());
+        playerPanel.add(playButton);
+
+        //next
         JButton nextButton = new JButton("next");
         playerPanel.add(nextButton);
 
-        //next
-        JButton playButton = new JButton("play");
-        playerPanel.add(playButton);
 
         frame.setSize(1500, 700);
         frame.setMinimumSize(new Dimension(1500, 700));
@@ -177,7 +172,7 @@ public class SimpleGui extends javax.swing.JFrame {
         rightPanel.add((VisibleSort) workpan, layConstraints);
     }
 
-    public class StartsortingListener implements ActionListener {
+    public class PlayListener implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
             DataClass sources = DataClass.getInstance();
