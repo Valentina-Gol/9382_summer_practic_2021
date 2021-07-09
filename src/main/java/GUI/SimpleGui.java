@@ -165,6 +165,13 @@ public class SimpleGui extends javax.swing.JFrame {
 
     }
 
+    public void setEnabledLeftPanel(boolean flag) {
+        leftPanel.setBackground(Color.LIGHT_GRAY);
+        for (var i = 0; i < leftPanel.getComponentCount();i++) {
+            leftPanel.getComponent(i).setEnabled(flag);
+        }
+    }
+
     public void showSort() {
         Sort workpan = DataClass.getInstance().sort;
         var layConstraints = getGridBagConstraints(1, 0, 1);
@@ -179,6 +186,7 @@ public class SimpleGui extends javax.swing.JFrame {
             try {
                 if (!(sources.sort == null || sources.mainArray == null)) {
                     showSort();
+                    setEnabledLeftPanel(false);
                 }
             } catch (Exception e) {
                 TheBestLogger.getInstance().logInfo("Nothing entered");
