@@ -1,13 +1,8 @@
 package GUI;
 
-import GUI.Listeners.ExportButtonListener;
-import GUI.Listeners.InputButtonListener;
-import GUI.Listeners.SortButtonListener;
-import GUI.Listeners.SpeedButtonListener;
+import GUI.Listeners.*;
 import logic.DataClass;
 import logic.MyLogger.TheBestLogger;
-import logic.Sort.Sort;
-import logic.Sort.VisibleSort;
 import org.apache.log4j.BasicConfigurator;
 
 import javax.swing.*;
@@ -23,6 +18,7 @@ public class SimpleGui extends javax.swing.JFrame {
     private JPanel rightPanel = new JPanel();
     private JTextArea textArea = new JTextArea("");
     private JFrame frame = new JFrame("Program");
+
 
     //Singleton!
     private static SimpleGui simpleGui = new SimpleGui();
@@ -79,6 +75,7 @@ public class SimpleGui extends javax.swing.JFrame {
         layConstraints = getGridBagConstraints(1, 1, 1);
         leftPanel.add(importBox, layConstraints); // добавление кнопки на панель с учётом разметки
         importBox.addActionListener(new InputButtonListener());
+
         //export
         JButton exportButton = new JButton("export");
         layConstraints = getGridBagConstraints(1, 2, 1);
@@ -127,6 +124,7 @@ public class SimpleGui extends javax.swing.JFrame {
         rightPanel.add(downPanel, layConstraints);
         //reset
         JButton resetButton = new JButton("reset");
+        resetButton.addActionListener(new ResetButtonListener());
         playerPanel.add(resetButton);
 
         //play
@@ -136,8 +134,8 @@ public class SimpleGui extends javax.swing.JFrame {
 
         //next
         JButton nextButton = new JButton("next");
+        nextButton.addActionListener(new NextButtonListener());
         playerPanel.add(nextButton);
-
 
         frame.setSize(1500, 700);
         frame.setMinimumSize(new Dimension(1500, 700));
@@ -165,26 +163,40 @@ public class SimpleGui extends javax.swing.JFrame {
 
     }
 
+    public void showSort() {
+        var layConstraints = getGridBagConstraints(1, 0, 1);
+        layConstraints.gridheight = 50;
+        rightPanel.add(DataClass.getInstance().sort, layConstraints);
+    }
     public void setEnabledLeftPanel(boolean flag) {
         for (var i = 0; i < leftPanel.getComponentCount();i++) {
             leftPanel.getComponent(i).setEnabled(flag);
         }
     }
 
-    public void showSort() {
-        Sort workpan = DataClass.getInstance().sort;
-        var layConstraints = getGridBagConstraints(1, 0, 1);
-        layConstraints.gridheight = 50;
-        rightPanel.add((VisibleSort) workpan, layConstraints);
-    }
-
-    public class PlayListener implements ActionListener {
-
+    public class NextButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             DataClass sources = DataClass.getInstance();
             try {
                 if (!(sources.sort == null || sources.mainArray == null)) {
                     showSort();
+                    sources.sort.startSort();
+                    setEnabledLeftPanel(false);
+                }
+            } catch (Exception e) {
+                TheBestLogger.getInstance().logInfo("Nothing entered");
+            }
+            frame.setVisible(true);
+        }
+    }
+
+    public class PlayListener implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            DataClass sources = DataClass.getInstance();
+            try {
+                if (!(sources.sort == null || sources.mainArray == null)) {
+                    showSort();
+                    sources.sort.startSort();
                     setEnabledLeftPanel(false);
                 }
             } catch (Exception e) {

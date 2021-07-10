@@ -3,30 +3,16 @@ package logic.Sort;
 import logic.DataClass;
 import logic.SortAlgo.ShakerAlgo;
 
-public class Shaker extends VisibleSort implements Sort,Runnable {
-    Thread thread;
-    public int speed;
+public class Shaker extends VisibleSort {
     public Shaker() {
         thread = new Thread(this);
-        thread.start();
     }
 
     @Override
-    public void run() {
-        while (true) {
-            try {
-                startSort();
-            } catch (Exception e) {
-            }
-        }
-
-    }
-
-    @Override
-    public void startSort() {
+    public void doSort() {
         speed = DataClass.getInstance().speed;
         try {
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         } catch (Exception e) {
         }
 

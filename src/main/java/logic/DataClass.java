@@ -1,10 +1,10 @@
 package logic;
 
-import logic.Sort.Sort;
+import logic.Sort.VisibleSort;
 
 public class DataClass {
     public int[] mainArray = null;
-    public Sort sort = null;
+    public VisibleSort sort;
     public int speed = 48;
 //    private int elem1 = -1;
 //    private int elem2 = -1;
