@@ -1,0 +1,6 @@
+Jul 10, 2021 8:49:07 PM logic.MyLogger.TheBestLogger logException
+WARNING: Wrong number format
+Jul 10, 2021 8:49:07 PM logic.MyLogger.TheBestLogger logException
+WARNING: Wrong number format
+Jul 10, 2021 8:49:07 PM logic.MyLogger.TheBestLogger logInfo
+INFO: Incorrect max border value

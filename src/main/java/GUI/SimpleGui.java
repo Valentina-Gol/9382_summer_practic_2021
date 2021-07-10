@@ -23,31 +23,6 @@ public class SimpleGui extends javax.swing.JFrame {
     //Singleton!
     private static SimpleGui simpleGui = new SimpleGui();
     private SimpleGui() {
-    }
-    public static SimpleGui getInstance() {
-        return simpleGui;
-    }
-
-    private GridBagConstraints getGridBagConstraints(int col, int row, int size) {
-        GridBagConstraints layConstraints = new GridBagConstraints();
-        layConstraints.fill = GridBagConstraints.BOTH; // заполняет ячейку целиком
-        layConstraints.gridwidth = size;
-        layConstraints.gridx = row; // координаты ячейки, в которую помещается кнопка
-        layConstraints.gridy = col;
-        return layConstraints;
-    }
-
-    public static void main(String[] args) {
-        BasicConfigurator.configure();
-        new SimpleGui().start();
-
-    }
-
-    public static void addInTextArea(String s){
-        simpleGui.textArea.append(s);
-    }
-
-    public void start() {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JSplitPane splitPane = new JSplitPane();
         //***************************** Настройка менюшки справа *************************************//
@@ -64,7 +39,7 @@ public class SimpleGui extends javax.swing.JFrame {
 
         frame.getContentPane().add(splitPane);
         splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);  // we want it to split the window verticaly
-        splitPane.setDividerLocation(250);                    // the initial position of the divider is 200 (our window is 400 pixels high)
+        splitPane.setDividerLocation(300);                    // the initial position of the divider is 200 (our window is 400 pixels high)
         splitPane.setTopComponent(leftPanel);                  // at the top we want our "topPanel"
         splitPane.setBottomComponent(rightPanel);
         leftPanel.setLayout(layout);
@@ -160,7 +135,27 @@ public class SimpleGui extends javax.swing.JFrame {
         layConstraints.gridheight = 20;
         leftPanel.add(scroll, layConstraints);
         frame.setVisible(true);
+    }
+    public static SimpleGui getInstance() {
+        return simpleGui;
+    }
 
+    private GridBagConstraints getGridBagConstraints(int col, int row, int size) {
+        GridBagConstraints layConstraints = new GridBagConstraints();
+        layConstraints.fill = GridBagConstraints.BOTH; // заполняет ячейку целиком
+        layConstraints.gridwidth = size;
+        layConstraints.gridx = row; // координаты ячейки, в которую помещается кнопка
+        layConstraints.gridy = col;
+        return layConstraints;
+    }
+
+    public static void main(String[] args) {
+        BasicConfigurator.configure();
+        SimpleGui s = SimpleGui.getInstance();
+    }
+
+    public static void addInTextArea(String s){
+        simpleGui.textArea.append(s + "\n");
     }
 
     public void showSort() {
