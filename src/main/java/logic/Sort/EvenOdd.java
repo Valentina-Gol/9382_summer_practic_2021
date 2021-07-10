@@ -13,15 +13,13 @@ public class EvenOdd extends VisibleSort {
 
     @Override
     public boolean next() {
-        if (itr < (arr.length - 1))
+        if (itr + 2 < (arr.length - 1))
             itr += 2;
-        else if (gap < arr.length) {
+        else if (gap + 1 < arr.length) {
                 gap++;
                 itr = (gap % 2 == 0) ? 0 : 1;
-                System.out.println(String.valueOf(itr));
             } else
                 return false;
-     //   System.out.println(String.valueOf(gap) + " " + String.valueOf(itr));
         return true;
     }
 

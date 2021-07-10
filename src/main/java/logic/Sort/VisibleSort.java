@@ -1,6 +1,7 @@
 package logic.Sort;
 
 import logic.DataClass;
+import logic.MyLogger.TheBestLogger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,9 +37,11 @@ public class VisibleSort extends JPanel implements Runnable {
                 checkForPaused();
                 doSort();
                 repaint();
+                System.out.println(gap + " " + itr);
                 if (speed != 0) {
                     Thread.sleep(speed);
                     if (!next()) {
+                        System.out.println("false");
                         return;
                     }
                 } else
@@ -46,6 +49,7 @@ public class VisibleSort extends JPanel implements Runnable {
             } else return;
         }
         } catch (Exception e) {
+            TheBestLogger.getInstance().logException(e.getMessage());
         }
     }
 
@@ -70,7 +74,7 @@ public class VisibleSort extends JPanel implements Runnable {
         }
     }
 
-    public boolean next() {return true; };
+    public boolean next() {return true; }
 
     public void doSort() {}
 

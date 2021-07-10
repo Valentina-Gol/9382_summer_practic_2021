@@ -1,10 +1,7 @@
 package logic.SortAlgo;
-import logic.Sort.Comb;
-import org.apache.log4j.Logger;
 public class EvenOddAlgo {
-    private static final Logger log = Logger.getLogger( Comb.class);
 
-    public EvenOddAlgo(){};
+    public EvenOddAlgo(){}
 
     public int[] smallGap(int[] arr, int itr){
         if (arr[itr] > arr[itr + 1]) {

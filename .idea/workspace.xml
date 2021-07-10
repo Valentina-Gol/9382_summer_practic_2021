@@ -4,33 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34d86193-5dea-4c86-b0c7-801b778a9481" name="Default Changelist" comment="add classes">
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI/Listeners/ExportButtonListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI/Listeners/InputButtonListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI/Listeners/SortButtonListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI/Listeners/SpeedButtonListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI/SimpleGui$PlayListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/GUI/SimpleGui.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/ArrayManager/ArrayHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/DataClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/FileManager/FileManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/MyLogger/TheBestLogger.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/Sort/Comb.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/Sort/EvenOdd.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/Sort/Shaker.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/Sort/Sort.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/Sort/VisibleSort.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/SortAlgo/BrushAlgo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/SortAlgo/EvenOddAlgo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logic/SortAlgo/ShakerAlgo.class" afterDir="false" />
+    <list default="true" id="34d86193-5dea-4c86-b0c7-801b778a9481" name="Default Changelist" comment="fixed bags with auto and step sort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logfile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sort/Comb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sort/Comb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sort/EvenOdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sort/EvenOdd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sort/Shaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sort/Shaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/SortAlgo/BrushAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/SortAlgo/BrushAlgo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logic/Sort/VisibleSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/Sort/VisibleSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logic/SortAlgo/EvenOddAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/SortAlgo/EvenOddAlgo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/SortAlgo/ShakerAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/SortAlgo/ShakerAlgo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,13 +65,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,6 +90,7 @@
       <workItem from="1625864468705" duration="1748000" />
       <workItem from="1625866276625" duration="1029000" />
       <workItem from="1625900715532" duration="9446000" />
+      <workItem from="1625953724088" duration="343000" />
     </task>
     <task id="LOCAL-00001" summary="add classes">
       <created>1625906087395</created>
@@ -134,7 +119,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="add classes" />
+    <MESSAGE value="fixed bags with auto and step sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bags with auto and step sort" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/9382_summer_practic_2021$main.ic" NAME="main Coverage Results" MODIFIED="1625866089214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

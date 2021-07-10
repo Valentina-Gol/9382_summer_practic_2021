@@ -4,6 +4,7 @@ import logic.SortAlgo.ShakerAlgo;
 
 public class Shaker extends VisibleSort {
     ShakerAlgo alg;
+    boolean flag = true;
     public Shaker() {
         super();
         alg = new ShakerAlgo();
@@ -12,11 +13,14 @@ public class Shaker extends VisibleSort {
 
     @Override
     public boolean next() {
-        if (itr < (arr.length - 1 - gap))
+        if (itr + 1 < (arr.length - 1 - gap) && flag)
             itr++;
-        else if (itr > gap)
+        else if (itr > gap) {
+            flag = false;
             itr--;
+        }
         else {
+            flag = true;
             if (gap != arr.length / 2) {
                 gap++;
                 itr = gap;

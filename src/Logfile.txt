@@ -1,6 +1,94 @@
-Jul 10, 2021 8:49:07 PM logic.MyLogger.TheBestLogger logException
-WARNING: Wrong number format
-Jul 10, 2021 8:49:07 PM logic.MyLogger.TheBestLogger logException
-WARNING: Wrong number format
-Jul 10, 2021 8:49:07 PM logic.MyLogger.TheBestLogger logInfo
-INFO: Incorrect max border value
+июл. 11, 2021 12:24:54 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:55 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:55 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:55 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:55 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:04 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done
+июл. 11, 2021 12:25:04 AM logic.MyLogger.TheBestLogger logInfo
+INFO: Step is done

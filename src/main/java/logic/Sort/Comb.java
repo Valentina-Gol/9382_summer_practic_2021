@@ -13,12 +13,12 @@ public class Comb extends VisibleSort {
     @Override
     public void startSort(int value) {
         super.startSort(value);
-        gap = arr.length;
+        gap = Math.max(1, (int) (arr.length / 1.25));
     }
 
     @Override
     public boolean next() {
-        if (itr < (arr.length - gap))
+        if (itr + 1 < (arr.length - gap))
             itr++;
         else {
             itr = 0;

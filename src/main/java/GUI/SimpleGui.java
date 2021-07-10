@@ -44,14 +44,14 @@ public class SimpleGui extends javax.swing.JFrame {
 
         frame.getContentPane().add(splitPane);
         splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);  // we want it to split the window verticaly
-        splitPane.setDividerLocation(300);                    // the initial position of the divider is 200 (our window is 400 pixels high)
+        splitPane.setDividerLocation(250);                    // the initial position of the divider is 200 (our window is 400 pixels high)
         splitPane.setTopComponent(leftPanel);                  // at the top we want our "topPanel"
         splitPane.setBottomComponent(rightPanel);
         leftPanel.setLayout(layout);
 
         //import
         String[] importItems = {"Create array", "Import from the file", "Create an array randomly", "Set array"};
-        JComboBox importBox = new JComboBox(importItems);
+        JComboBox<String> importBox = new JComboBox<>(importItems);
         layConstraints = getGridBagConstraints(1, 1, 1);
         leftPanel.add(importBox, layConstraints); // добавление кнопки на панель с учётом разметки
         importBox.addActionListener(new InputButtonListener());
@@ -65,7 +65,7 @@ public class SimpleGui extends javax.swing.JFrame {
 
         //Type of sort
         String[] sortItems = {"Choose type of sorting", "Odd-Even sorting", "Brush sorting", "Shaker sorting"};
-        JComboBox sortBox = new JComboBox(sortItems);
+        JComboBox<String> sortBox = new JComboBox<>(sortItems);
         layConstraints = getGridBagConstraints(3, 1, 2);
         leftPanel.add(sortBox, layConstraints);
         sortBox.addActionListener(new SortButtonListener());
