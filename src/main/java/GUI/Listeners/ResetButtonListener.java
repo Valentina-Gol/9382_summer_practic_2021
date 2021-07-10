@@ -10,8 +10,8 @@ public class ResetButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         DataClass sources = DataClass.getInstance();
         try {
-        /*    sources.sort.thread.interrupt();
-            sources.sort.thread.start();*/
+            sources.sort.thread.interrupt();
+            sources.sort.startSort(0);
         } catch (Exception e) {
             TheBestLogger.getInstance().logInfo("Nothing entered");
         }

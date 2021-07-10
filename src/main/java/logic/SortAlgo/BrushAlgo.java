@@ -4,38 +4,32 @@ import org.apache.log4j.Logger;
 
 public class BrushAlgo {
     private static final Logger log = Logger.getLogger( Comb.class);
-    private int gap;
-    private int itr;
 
-    public BrushAlgo(int newgap){
-        gap = newgap;
-        itr = 0;
-    }
+    public BrushAlgo(){}
 
-    public void smallGap(int[] arr, Comb mox){
+    public int[] smallGap(int[] arr, int gap, int itr){
        int j = itr + gap;
        if (arr[itr] > arr[j]) {
             int current = arr[itr];
             arr[itr] = arr[j];
             arr[j] = current;
        }
-        try {
-            Thread.sleep(mox.speed);
-        } catch (Exception e) {
-        }
-       mox.repaint();
+        return arr;
     }
 
-    public void bigGap(int[] arr, Comb mox){
-        for (itr = 0; itr < arr.length - gap; itr++){
-            smallGap(arr, mox);
+    public int[] bigGap(int[] arr, int gap){
+        for (int itr = 0; itr < arr.length - gap; itr++){
+            arr = smallGap(arr, gap, itr);
         }
+        return arr;
     }
 
-    public  void useSort(int[] arr, Comb mox){
+    public  int[] useSort(int[] arr){
+        int gap = arr.length;
         while (gap > 1){
             gap = Math.max(1, (int)(gap / 1.25));
-            bigGap(arr, mox);
+            arr = bigGap(arr, gap);
         }
+        return arr;
     }
 }

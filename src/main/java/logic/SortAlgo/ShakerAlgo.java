@@ -1,54 +1,46 @@
 package logic.SortAlgo;
-import logic.DataClass;
 import logic.Sort.Comb;
-import logic.Sort.Shaker;
 import org.apache.log4j.Logger;
 public class ShakerAlgo {
     private static final Logger log = Logger.getLogger( Comb.class);
-    private int gap;
-    private int itr;
+    public ShakerAlgo(){};
 
-    public ShakerAlgo(int newgap){
-        gap = newgap;
-        itr = 0;
-    };
-
-    public void smallGap(int[] arr, boolean flag, Shaker mox){
+    public int[] smallGap(int[] arr, boolean flag, int itr){
         if(flag){
-            if (arr[gap + 1] < arr[gap]) {
-                int current = arr[gap];
-                arr[gap] = arr[gap + 1];
-                arr[gap + 1] = current;
+            if (arr[itr + 1] < arr[itr]) {
+                int current = arr[itr];
+                arr[itr] = arr[itr + 1];
+                arr[itr + 1] = current;
             }
         }
         else{
-            if (arr[gap - 1] > arr[gap]) {
-                int current = arr[gap];
-                arr[gap] = arr[gap - 1];
-                arr[gap - 1] = current;
+            if (arr[itr - 1] > arr[itr]) {
+                int current = arr[itr];
+                arr[itr] = arr[itr - 1];
+                arr[itr - 1] = current;
             }
         }
-        try {
-            Thread.sleep(mox.speed);
-        } catch (Exception e) {
-        }
-        mox.repaint();
-    };
-    public void bigGap(int[] arr, Shaker mox ){
-        while (gap < arr.length - 1 - itr){
-            smallGap(arr,true, mox);
-            gap++;
-        }
-        while (gap > itr){
-            smallGap(arr, false, mox);
-            gap--;
-        }
+        return arr;
     }
-    public  void useSort(int[] arr, Shaker mox){
-        while (itr != arr.length / 2) {
-            bigGap(arr, mox);
+
+    public int[] bigGap(int[] arr, int gap, int itr){
+        while (itr < arr.length - 1 - gap){
+            arr = smallGap(arr,true,  itr);
             itr++;
-            gap= itr;
         }
+        while (itr > gap){
+            arr = smallGap(arr, false, itr);
+            itr--;
+        }
+        return arr;
+    }
+    public  int[] useSort(int[] arr){
+        int gap = 0, itr = 0;
+        while (gap != arr.length / 2) {
+            arr = bigGap(arr, gap, itr);
+            gap++;
+            itr = gap;
+        }
+        return arr;
     }
 }

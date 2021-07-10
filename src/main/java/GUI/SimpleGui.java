@@ -3,6 +3,7 @@ package GUI;
 import GUI.Listeners.*;
 import logic.DataClass;
 import logic.MyLogger.TheBestLogger;
+import logic.Sort.StateMachine;
 import org.apache.log4j.BasicConfigurator;
 
 import javax.swing.*;
@@ -17,7 +18,11 @@ public class SimpleGui extends javax.swing.JFrame {
     private JPanel leftPanel = new JPanel();
     private JPanel rightPanel = new JPanel();
     private JTextArea textArea = new JTextArea("");
+    JButton nextButton;
+    JButton playButton;
     private JFrame frame = new JFrame("Program");
+    private StateMachine stateMachine = new StateMachine();
+    private boolean isFirstTime = true;
 
 
     //Singleton!
@@ -103,12 +108,12 @@ public class SimpleGui extends javax.swing.JFrame {
         playerPanel.add(resetButton);
 
         //play
-        JButton playButton = new JButton("play");
+        playButton = new JButton("play");
         playButton.addActionListener(new PlayListener());
         playerPanel.add(playButton);
 
         //next
-        JButton nextButton = new JButton("next");
+        nextButton = new JButton("next");
         nextButton.addActionListener(new NextButtonListener());
         playerPanel.add(nextButton);
 
@@ -161,7 +166,8 @@ public class SimpleGui extends javax.swing.JFrame {
     public void showSort() {
         var layConstraints = getGridBagConstraints(1, 0, 1);
         layConstraints.gridheight = 50;
-        rightPanel.add(DataClass.getInstance().sort, layConstraints);
+        rightPanel.add(stateMachine.currentState, layConstraints);
+        setEnabledLeftPanel(false);
     }
     public void setEnabledLeftPanel(boolean flag) {
         for (var i = 0; i < leftPanel.getComponentCount();i++) {
@@ -174,12 +180,19 @@ public class SimpleGui extends javax.swing.JFrame {
             DataClass sources = DataClass.getInstance();
             try {
                 if (!(sources.sort == null || sources.mainArray == null)) {
-                    showSort();
-                    sources.sort.startSort();
-                    setEnabledLeftPanel(false);
+                    if (isFirstTime) {
+                        stateMachine.initStateMachine(0);
+                        showSort();
+                        isFirstTime = false;
+                        playButton.setEnabled(false);
+                    }
+                    if (stateMachine.doStep()) {
+                        TheBestLogger.getInstance().logInfo("Step is done");
+                    } else
+                        TheBestLogger.getInstance().logException("Sort is finished");
                 }
             } catch (Exception e) {
-                TheBestLogger.getInstance().logInfo("Nothing entered");
+                TheBestLogger.getInstance().logInfo("NextButton");
             }
             frame.setVisible(true);
         }
@@ -190,12 +203,12 @@ public class SimpleGui extends javax.swing.JFrame {
             DataClass sources = DataClass.getInstance();
             try {
                 if (!(sources.sort == null || sources.mainArray == null)) {
+                    stateMachine.initStateMachine(DataClass.getInstance().speed);
                     showSort();
-                    sources.sort.startSort();
-                    setEnabledLeftPanel(false);
+                    nextButton.setEnabled(false);
                 }
             } catch (Exception e) {
-                TheBestLogger.getInstance().logInfo("Nothing entered");
+                TheBestLogger.getInstance().logInfo("PlayButton");
             }
             frame.setVisible(true);
         }

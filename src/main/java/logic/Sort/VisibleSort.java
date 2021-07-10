@@ -5,39 +5,81 @@ import logic.DataClass;
 import javax.swing.*;
 import java.awt.*;
 
-public class VisibleSort extends JPanel implements Sort, Runnable {
-    DataClass arrneedsort;
+public class VisibleSort extends JPanel implements Runnable {
     public Thread thread;
-    public int speed;
+    protected int gap;
+    protected int itr;
+    protected int[] arr;
+    private int speed;
+    private boolean pauseThreadFlag = false;
 
     VisibleSort() {
-        arrneedsort = DataClass.getInstance();
+        itr = 0;
+        gap = 0;
     }
 
-    @Override
-    public void startSort() {
+    public void startSort(int value) {
+        arr = DataClass.getInstance().mainArray;
+        speed = value;
         thread.start();
     }
 
-    public void doSort() {};
+    public void makeStep() {
+        resumeThread();
+    }
 
     @Override
     public void run() {
-        while(true) {
-            try {
-                if (!thread.isInterrupted()) {
-                    this.doSort();
-                } else return;
-            } catch (Exception e) {}
+        try {
+        while (true) {
+            if (!thread.isInterrupted()) {
+                checkForPaused();
+                doSort();
+                repaint();
+                if (speed != 0) {
+                    Thread.sleep(speed);
+                    if (!next()) {
+                        return;
+                    }
+                } else
+                    pauseThread();
+            } else return;
         }
-
+        } catch (Exception e) {
+        }
     }
+
+    private void checkForPaused() {
+        synchronized (thread) {
+            while (pauseThreadFlag) {
+                try {
+                        thread.wait();
+                } catch (Exception e) {}
+            }
+        }
+    }
+
+    public void pauseThread() throws InterruptedException {
+        pauseThreadFlag = true;
+    }
+
+    public void resumeThread() {
+        synchronized(thread) {
+            pauseThreadFlag = false;
+            thread.notify();
+        }
+    }
+
+    public boolean next() {return true; };
+
+    public void doSort() {}
+
 
     public void paint(Graphics g) {
         g.clearRect(0, 0, 1500,800);
-        for (int i = 0; i < arrneedsort.mainArray.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             g.setColor(Color.BLACK);
-            g.fillRect(i*10+100,(500-(arrneedsort.mainArray[i]*4)),10, arrneedsort.mainArray[i]*4);
+            g.fillRect(i*10+100,(500-(arr[i]*4)),10, arr[i]*4);
         }
 
     }
