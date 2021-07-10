@@ -1,18 +1,19 @@
 package logic.SortAlgo;
 import logic.DataClass;
 import logic.Sort.Comb;
+import logic.Sort.Shaker;
 import org.apache.log4j.Logger;
 public class ShakerAlgo {
     private static final Logger log = Logger.getLogger( Comb.class);
     private int gap;
     private int itr;
 
-    ShakerAlgo( int newgap){
+    public ShakerAlgo(int newgap){
         gap = newgap;
         itr = 0;
     };
 
-    public void smallGap(int[] arr, boolean flag){
+    public void smallGap(int[] arr, boolean flag, Shaker mox){
         if(flag){
             if (arr[gap + 1] < arr[gap]) {
                 int current = arr[gap];
@@ -21,26 +22,31 @@ public class ShakerAlgo {
             }
         }
         else{
-            if (arr[gap - 1] < arr[gap]) {
+            if (arr[gap - 1] > arr[gap]) {
                 int current = arr[gap];
                 arr[gap] = arr[gap - 1];
                 arr[gap - 1] = current;
             }
         }
+        try {
+            Thread.sleep(mox.speed);
+        } catch (Exception e) {
+        }
+        mox.repaint();
     };
-    public void bigGap(int[] arr ){
+    public void bigGap(int[] arr, Shaker mox ){
         while (gap < arr.length - 1 - itr){
-            smallGap(arr,true);
+            smallGap(arr,true, mox);
             gap++;
         }
         while (gap > itr){
-            smallGap(arr, false);
+            smallGap(arr, false, mox);
             gap--;
         }
     }
-    public  void useSort(int[] arr){
+    public  void useSort(int[] arr, Shaker mox){
         while (itr != arr.length / 2) {
-            bigGap(arr);
+            bigGap(arr, mox);
             itr++;
             gap= itr;
         }
