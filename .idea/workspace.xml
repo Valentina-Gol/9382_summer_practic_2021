@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34d86193-5dea-4c86-b0c7-801b778a9481" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chain/log.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logic/SortAlgo/BrushAlgo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logic/SortAlgo/EvenOddAlgo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logic/SortAlgo/ShakerAlgo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/9382_summer_practic_2021.iml" beforeDir="false" afterPath="$PROJECT_DIR$/9382_summer_practic_2021.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Listeners/IOButtonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Listeners/IOButtonListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/SimpleGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/ArrayManager/ArrayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/ArrayManager/ArrayHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/FileManager/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/FileManager/text.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Sort/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Sort/SortTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,16 +39,36 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GUI.SimpleGui" />
       <module name="9382_summer_practic_2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -66,8 +82,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625667299110</updated>
+      <workItem from="1625864468705" duration="1748000" />
+      <workItem from="1625866276625" duration="1029000" />
+      <workItem from="1625900715532" duration="5282000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -80,5 +102,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/9382_summer_practic_2021$main.ic" NAME="main Coverage Results" MODIFIED="1625866089214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>GUI.*</FILTER>
+    </SUITE>
   </component>
 </project>
