@@ -4,7 +4,7 @@ import logic.ArrayManager.ArrayHandler;
 import logic.DataClass;
 import logic.FileManager.FileManager;
 import logic.MyLogger.TheBestLogger;
-import GUI.Listeners.SwingControlDemo;
+import GUI.SimpleGui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -44,11 +44,40 @@ public class InputButtonListener implements ActionListener {
                     TheBestLogger.getInstance().logInfo("Nothing entered");
                 }
             } else if (selected == "Create an array randomly") {
-                JFrame jFrame = new JFrame();
-                String arrayString = null;
-                arrayString = JOptionPane.showInputDialog(jFrame, "Введите три числа через пробел(кол-во элементов, нижняя и верхняя граница)");
-                arr = ArrayHandler.splitArrayFromString(arrayString);
-                arr = ArrayHandler.createArray(arr[0], arr[1], arr[2]);
+                JFrame frame = new JFrame();
+                JTextField firstName = new JTextField();
+                JTextField lastName = new JTextField();
+                JTextField password = new JTextField();
+                final JComponent[] inputs = new JComponent[] {
+                        new JLabel("Количество элементов"),
+                        firstName,
+                        new JLabel("Нижняя граница"),
+                        lastName,
+                        new JLabel("Верхняя граница"),
+                        password
+                };
+                int result = JOptionPane.showConfirmDialog(null, inputs, "Input data", JOptionPane.PLAIN_MESSAGE);
+                if (result == JOptionPane.OK_OPTION) {
+                    int[] arr1 = ArrayHandler.splitArrayFromString(firstName.getText());
+                    int[] arr2 = ArrayHandler.splitArrayFromString(lastName.getText());
+                    int[] arr3 = ArrayHandler.splitArrayFromString(password.getText());
+                    if ((arr1.length == 1) && (arr1[0] <= 100)){
+                        if ((arr2.length == 1)){
+                            if (arr3.length == 1){
+                                arr =  ArrayHandler.createArray(arr1[0], arr2[0], arr3[0]);
+                            } else{
+                                TheBestLogger.getInstance().logInfo("Incorrect count value");
+                                JOptionPane.showMessageDialog(null, "Некорректное количество элементов");
+                            }
+                        } else{
+                            TheBestLogger.getInstance().logInfo("Incorrect min border value");
+                            JOptionPane.showMessageDialog(null, "Некорректная нижняя граница");
+                        }
+                    } else{
+                        TheBestLogger.getInstance().logInfo("Incorrect max border value");
+                        JOptionPane.showMessageDialog(null, "Некорректная верхняя граница");
+                    }
+                }
             } else if (selected == "Set array") {
                 JFrame jFrame = new JFrame();
                 String arrayString = null;

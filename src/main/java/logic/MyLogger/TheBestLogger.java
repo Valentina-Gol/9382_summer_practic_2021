@@ -35,12 +35,12 @@ public class TheBestLogger{
 
     public void logException(String s){
         logger.warning(s);
-        SimpleGui.addInTextArea(s);
+        SimpleGui.getInstance().addInTextArea(s);
     }
 
     public void logInfo(String s){
         logger.info(s);
-        SimpleGui.addInTextArea(s);
+        SimpleGui.getInstance().addInTextArea(s);
     }
 }
 
