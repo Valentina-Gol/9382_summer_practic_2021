@@ -1,11 +1,7 @@
 package logic.SortAlgo;
 import logic.DataClass;
-import logic.Sort.Comb;
-import org.apache.log4j.Logger;
 
 public class BrushAlgo {
-    private static final Logger log = Logger.getLogger( Comb.class);
-
     public BrushAlgo(){}
 
     public int[] smallGap(int[] arr, int gap, int itr){

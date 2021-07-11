@@ -1,11 +1,8 @@
 package logic.SortAlgo;
 import logic.DataClass;
 import logic.MyLogger.TheBestLogger;
-import logic.Sort.Comb;
-import org.apache.log4j.Logger;
 public class ShakerAlgo {
-    private static final Logger log = Logger.getLogger( Comb.class);
-    public ShakerAlgo(){};
+    public ShakerAlgo(){}
 
     public int[] smallGap(int[] arr, boolean flag, int itr){
         if(flag){
@@ -22,7 +19,7 @@ public class ShakerAlgo {
         else{
             TheBestLogger.getInstance().logInfo(String.format("Checked elements in position %d, %d", itr - 1, itr));
             DataClass.getInstance().elem1 = itr - 1;
-            DataClass.getInstance().elem1 = itr;
+            DataClass.getInstance().elem2 = itr;
             if (arr[itr - 1] > arr[itr]) {
                 TheBestLogger.getInstance().logInfo("Swap elements!");
                 int current = arr[itr];
