@@ -37,11 +37,11 @@ public class VisibleSort extends JPanel implements Runnable {
                 checkForPaused();
                 doSort();
                 repaint();
-                System.out.println(gap + " " + itr);
+                TheBestLogger.getInstance().logInfo(gap + " " + itr);
                 if (speed != 0) {
                     Thread.sleep(speed);
                     if (!next()) {
-                        System.out.println("false");
+                        TheBestLogger.getInstance().logInfo("false");
                         return;
                     }
                 } else

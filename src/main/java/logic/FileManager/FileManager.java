@@ -14,7 +14,6 @@ public class FileManager {
      */
     public static int[] fileInput(File file) {
         List<Integer> arrayL = new ArrayList<Integer>();
-        //File file = new File(filename);
         int[] array = new int[0];
         BufferedReader reader;
         try {

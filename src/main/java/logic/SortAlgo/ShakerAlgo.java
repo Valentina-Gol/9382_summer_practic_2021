@@ -1,4 +1,5 @@
 package logic.SortAlgo;
+import logic.MyLogger.TheBestLogger;
 import logic.Sort.Comb;
 import org.apache.log4j.Logger;
 public class ShakerAlgo {
@@ -7,6 +8,7 @@ public class ShakerAlgo {
 
     public int[] smallGap(int[] arr, boolean flag, int itr){
         if(flag){
+            //TheBestLogger.getInstance().logInfo("Checked");
             if (arr[itr + 1] < arr[itr]) {
                 int current = arr[itr];
                 arr[itr] = arr[itr + 1];

@@ -19,8 +19,8 @@ public class ArrayHandler {
     public static int[] createArray(int arrayLen, int minNumber, int maxNumber){
         int[] array = new int[arrayLen];
         if (maxNumber < minNumber){
-            System.out.println("Min array border more than maxborder");
-            System.out.println("Swap borders!");
+            TheBestLogger.getInstance().logInfo("Min array border more than maxborder");
+            TheBestLogger.getInstance().logInfo("Swap borders!");
             int current = minNumber;
             minNumber = maxNumber;
             maxNumber = current;
@@ -30,12 +30,12 @@ public class ArrayHandler {
                 array[i] = (int)(Math.random()*maxNumber) + minNumber;
             }
         } catch(NumberFormatException e){
-            System.out.println("Wrong number format");
+            TheBestLogger.getInstance().logException("Wrong number format");
         } catch (NegativeArraySizeException e){
-            System.out.println("Negative array length");
+            TheBestLogger.getInstance().logException("Negative array length");
         }
         if (array.length > 100){
-            System.out.println("Too much size of the array(max size is 100)");
+            TheBestLogger.getInstance().logException("Too much size of the array(max size is 100)");
             return new int[0];
         }
         return  array;

@@ -1,94 +1,30 @@
-июл. 11, 2021 12:24:54 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:55 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:55 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:55 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:55 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:56 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:57 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:58 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:24:59 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:00 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:01 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:02 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:03 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:04 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
-июл. 11, 2021 12:25:04 AM logic.MyLogger.TheBestLogger logInfo
-INFO: Step is done
+Jul 11, 2021 7:35:51 PM logic.MyLogger.TheBestLogger logInfo
+INFO: Nothing entered
+Jul 11, 2021 7:35:53 PM logic.MyLogger.TheBestLogger logInfo
+INFO: Nothing entered
+Jul 11, 2021 7:35:53 PM logic.MyLogger.TheBestLogger logInfo
+INFO: Nothing entered
+Jul 11, 2021 7:35:54 PM logic.MyLogger.TheBestLogger logInfo
+INFO: Nothing entered
+Jul 11, 2021 7:35:54 PM logic.MyLogger.TheBestLogger logInfo
+INFO: Nothing entered
+Jul 11, 2021 7:35:54 PM logic.MyLogger.TheBestLogger logInfo
+INFO: Nothing entered
+Jul 11, 2021 7:35:55 PM logic.MyLogger.TheBestLogger logInfo
+INFO: Nothing entered
+Jul 11, 2021 7:35:56 PM logic.MyLogger.TheBestLogger logInfo
+INFO: PlayButton
+Jul 11, 2021 7:35:56 PM logic.MyLogger.TheBestLogger logInfo
+INFO: PlayButton
+Jul 11, 2021 7:35:57 PM logic.MyLogger.TheBestLogger logInfo
+INFO: PlayButton
+Jul 11, 2021 7:35:58 PM logic.MyLogger.TheBestLogger logInfo
+INFO: PlayButton
+Jul 11, 2021 7:35:58 PM logic.MyLogger.TheBestLogger logInfo
+INFO: PlayButton
+Jul 11, 2021 7:35:58 PM logic.MyLogger.TheBestLogger logInfo
+INFO: PlayButton
+Jul 11, 2021 7:35:58 PM logic.MyLogger.TheBestLogger logInfo
+INFO: PlayButton
+Jul 11, 2021 7:35:58 PM logic.MyLogger.TheBestLogger logInfo
+INFO: PlayButton
