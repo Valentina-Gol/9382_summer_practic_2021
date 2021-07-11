@@ -11,7 +11,7 @@ public class ShakerAlgo {
         if(flag){
             TheBestLogger.getInstance().logInfo(String.format("Checked elements in position %d, %d", itr, itr + 1));
             DataClass.getInstance().elem1 = itr;
-            DataClass.getInstance().elem1 = itr + 1;
+            DataClass.getInstance().elem2 = itr + 1;
             if (arr[itr + 1] < arr[itr]) {
                 TheBestLogger.getInstance().logInfo("Swap elements!");
                 int current = arr[itr];

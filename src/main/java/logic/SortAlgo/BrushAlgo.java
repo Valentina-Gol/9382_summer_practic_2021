@@ -11,7 +11,7 @@ public class BrushAlgo {
     public int[] smallGap(int[] arr, int gap, int itr){
        int j = itr + gap;
         DataClass.getInstance().elem1 = itr;
-        DataClass.getInstance().elem1 = j;
+        DataClass.getInstance().elem2 = j;
        if (arr[itr] > arr[j]) {
             int current = arr[itr];
             arr[itr] = arr[j];
