@@ -4,10 +4,9 @@ import logic.DataClass;
 import logic.MyLogger.TheBestLogger;
 
 public class EvenOddAlgo {
-
     public EvenOddAlgo(){}
 
-    public int[] smallGap(int[] arr, int itr){
+    public int[] smallGap(int[] arr, int itr) {
         DataClass.getInstance().elem1 = itr;
         DataClass.getInstance().elem2 = itr + 1;
         TheBestLogger.getInstance().logInfo(String.format("Checked elements in position %d, %d", itr, itr + 1));
@@ -20,13 +19,14 @@ public class EvenOddAlgo {
         return arr;
     }
 
-    public int[] bigGap(int[] arr, int itr){
+    public int[] bigGap(int[] arr, int itr) {
         for (; itr < arr.length - 1; itr += 2) {
             arr = smallGap(arr, itr);
         }
         return arr;
     }
-    public int[] useSort(int[] arr){
+
+    public int[] useSort(int[] arr) {
         for (int gap = 0; gap < arr.length; gap++) {
             int itr = (gap % 2 == 0) ? 0 : 1;
             arr = bigGap(arr, itr);

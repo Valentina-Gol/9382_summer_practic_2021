@@ -5,7 +5,8 @@ import logic.SortAlgo.EvenOddAlgo;
 
 public class EvenOdd extends VisibleSort {
     EvenOddAlgo alg;
-    public EvenOdd(){
+
+    public EvenOdd() {
         super();
         alg = new EvenOddAlgo();
         thread = new Thread(this);
@@ -15,14 +16,13 @@ public class EvenOdd extends VisibleSort {
     public boolean next() {
         if (itr + 2 < (arr.length - 1))
             itr += 2;
-        else if (gap  < arr.length) {
-                gap++;
-                itr = (gap % 2 == 0) ? 0 : 1;
-            } else
-                return false;
+        else if (gap < arr.length) {
+            gap++;
+            itr = (gap % 2 == 0) ? 0 : 1;
+        } else
+            return false;
         return true;
     }
-
 
     @Override
     public void doSort() {

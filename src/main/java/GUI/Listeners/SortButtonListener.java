@@ -13,9 +13,8 @@ import java.awt.event.ActionListener;
 public class SortButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         int[] arr = null;
-        JComboBox comboBox = (JComboBox) event.getSource();
+        JComboBox<String> comboBox = (JComboBox<String>) event.getSource();
         Object selected = comboBox.getSelectedItem();
-
         try {
             if (selected == "Odd-Even sorting") {
                 DataClass.getInstance().sort = new EvenOdd();

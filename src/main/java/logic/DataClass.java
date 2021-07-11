@@ -10,7 +10,9 @@ public class DataClass {
     public int elem2 = -1;
 
     private static DataClass dataClass = new DataClass();
+
     private DataClass() {}
+
     public static DataClass getInstance() {
         return dataClass;
     }

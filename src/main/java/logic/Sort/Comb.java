@@ -4,7 +4,8 @@ import logic.SortAlgo.BrushAlgo;
 
 public class Comb extends VisibleSort {
     BrushAlgo alg;
-    public Comb(){
+
+    public Comb() {
         super();
         alg = new BrushAlgo();
         thread = new Thread(this);

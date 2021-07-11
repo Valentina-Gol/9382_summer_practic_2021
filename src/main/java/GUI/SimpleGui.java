@@ -14,40 +14,53 @@ import java.awt.event.ActionListener;
 
 
 public class SimpleGui extends javax.swing.JFrame {
+    //Singleton!
+    private static SimpleGui simpleGui = new SimpleGui();
+
+    public static SimpleGui getInstance() {
+        return simpleGui;
+    }
+
+    public static void main(String[] args) {
+        BasicConfigurator.configure();
+        SimpleGui s = SimpleGui.getInstance();
+    }
+
     private JPanel mainPanel = new JPanel();
     private JPanel leftPanel = new JPanel();
     private JPanel rightPanel = new JPanel();
     private JTextArea textArea = new JTextArea("");
-    JButton nextButton;
-    JButton playButton;
+    private JButton nextButton;
+    private JButton playButton;
     private JFrame frame = new JFrame("Program");
     private StateMachine stateMachine = new StateMachine();
     private boolean isFirstTime = true;
 
-
-    //Singleton!
-    private static SimpleGui simpleGui = new SimpleGui();
     private SimpleGui() {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JSplitPane splitPane = new JSplitPane();
-        //***************************** Настройка менюшки справа *************************************//
         GridBagConstraints layConstraints;
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.X_AXIS));
-        mainPanel.add(leftPanel);
-        mainPanel.add(rightPanel);
-        leftPanel.setBorder(new EmptyBorder(4, 4, 4, 4)); // отступ внутри панели на 4 пикселя со всех сторон
+
         GridBagLayout layout = new GridBagLayout();
         layout.rowHeights = new int[]{23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23}; // высоты кнопок
         layout.rowWeights = new double[26];
         layout.rowWeights[layout.rowWeights.length - 1] = Double.MIN_VALUE;
         layout.columnWeights = new double[]{1.0};
 
-        frame.getContentPane().add(splitPane);
-        splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT);  // we want it to split the window verticaly
-        splitPane.setDividerLocation(250);                    // the initial position of the divider is 200 (our window is 400 pixels high)
-        splitPane.setTopComponent(leftPanel);                  // at the top we want our "topPanel"
-        splitPane.setBottomComponent(rightPanel);
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.X_AXIS));
+        mainPanel.add(leftPanel); //left panel for options
+        mainPanel.add(rightPanel); //right panel for visual
+        leftPanel.setBorder(new EmptyBorder(4, 4, 4, 4)); // отступ внутри панели на 4 пикселя со всех сторон
+        rightPanel.setBorder(new EmptyBorder(4, 4, 4, 4));
         leftPanel.setLayout(layout);
+
+        JSplitPane splitPane = new JSplitPane();
+        frame.getContentPane().add(splitPane);
+        splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT); // we want it to split the window horizontaly
+        splitPane.setDividerLocation(250); // the initial position of the divider is 250
+        splitPane.setTopComponent(leftPanel);
+        splitPane.setBottomComponent(rightPanel);
+
+        //добавление UI элементов в левую панель
 
         //import
         String[] importItems = {"Create array", "Import from the file", "Create an array randomly", "Set array"};
@@ -83,25 +96,36 @@ public class SimpleGui extends javax.swing.JFrame {
         layConstraints = getGridBagConstraints(6, 1, 2);
         leftPanel.add(speedSlider, layConstraints);
 
-        /*
-         * Первые два параметра конструктора GridLayout определяют количество
-         * строк и столбцов в таблице. Вторые 2 параметра - расстояние между
-         * ячейками по горизонтали и вертикали
-         */
+        //Прокрутка
+        textArea.setSize(400, 400);
+        textArea.setLineWrap(true);
+        textArea.setEditable(false);
+        textArea.setVisible(true);
 
+        JScrollPane scroll = new JScrollPane(textArea);
+        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        layConstraints = getGridBagConstraints(10, 1, 2);
+        layConstraints.gridheight = 20;
+        leftPanel.add(scroll, layConstraints);
+
+        //добавление элементов в правую панель
+        //three buttons
         JPanel playerPanel = new JPanel(new GridLayout(1, 3, 5, 0));
+
         var gridLayout = new GridBagLayout();
         gridLayout.rowHeights = layout.rowHeights;
         gridLayout.rowWeights = layout.rowWeights;
         gridLayout.rowWeights[gridLayout.rowWeights.length - 1] = Double.MIN_VALUE;
         gridLayout.columnWeights = layout.columnWeights;
-
         rightPanel.setLayout(gridLayout);
 
-        JPanel downPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        downPanel.add(playerPanel, BorderLayout.NORTH);
+        //для выравнивания по центру
+        JPanel upPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        upPanel.add(playerPanel, BorderLayout.NORTH);
         layConstraints = getGridBagConstraints(0, 0, 1);
-        rightPanel.add(downPanel, layConstraints);
+        rightPanel.add(upPanel, layConstraints);
+
         //reset
         JButton resetButton = new JButton("reset");
         resetButton.addActionListener(new ResetButtonListener());
@@ -121,28 +145,7 @@ public class SimpleGui extends javax.swing.JFrame {
         frame.setMinimumSize(new Dimension(1500, 700));
         frame.getContentPane().add(mainPanel, BorderLayout.SOUTH);
         pack();
-
-        //Прокрутка
-        textArea.setSize(400, 400);
-        textArea.setLineWrap(true);
-        textArea.setEditable(false);
-        textArea.setVisible(true);
-
-        /*Appender defaultAppender = Logger.getRootLogger().getAppender("app");
-        defaultAppender = new WriterAppender(layout, textArea);
-        writerAppender.append(event);
-        logList.add(stringWriter.toString());*/
-
-        JScrollPane scroll = new JScrollPane(textArea);
-        scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        layConstraints = getGridBagConstraints(10, 1, 2);
-        layConstraints.gridheight = 20;
-        leftPanel.add(scroll, layConstraints);
         frame.setVisible(true);
-    }
-    public static SimpleGui getInstance() {
-        return simpleGui;
     }
 
     private GridBagConstraints getGridBagConstraints(int col, int row, int size) {
@@ -154,12 +157,7 @@ public class SimpleGui extends javax.swing.JFrame {
         return layConstraints;
     }
 
-    public static void main(String[] args) {
-        BasicConfigurator.configure();
-        SimpleGui s = SimpleGui.getInstance();
-    }
-
-    public static void addInTextArea(String s){
+    public static void addInTextArea(String s) {
         simpleGui.textArea.append(s + "\n");
     }
 
@@ -169,8 +167,9 @@ public class SimpleGui extends javax.swing.JFrame {
         rightPanel.add(stateMachine.currentState, layConstraints);
         setEnabledLeftPanel(false);
     }
+
     public void setEnabledLeftPanel(boolean flag) {
-        for (var i = 0; i < leftPanel.getComponentCount();i++) {
+        for (var i = 0; i < leftPanel.getComponentCount(); i++) {
             leftPanel.getComponent(i).setEnabled(flag);
         }
     }

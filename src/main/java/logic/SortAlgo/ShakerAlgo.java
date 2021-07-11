@@ -2,10 +2,11 @@ package logic.SortAlgo;
 import logic.DataClass;
 import logic.MyLogger.TheBestLogger;
 public class ShakerAlgo {
-    public ShakerAlgo(){}
+    public ShakerAlgo() {
+    }
 
-    public int[] smallGap(int[] arr, boolean flag, int itr){
-        if(flag){
+    public int[] smallGap(int[] arr, boolean flag, int itr) {
+        if (flag) {
             TheBestLogger.getInstance().logInfo(String.format("Checked elements in position %d, %d", itr, itr + 1));
             DataClass.getInstance().elem1 = itr;
             DataClass.getInstance().elem2 = itr + 1;
@@ -15,8 +16,7 @@ public class ShakerAlgo {
                 arr[itr] = arr[itr + 1];
                 arr[itr + 1] = current;
             }
-        }
-        else{
+        } else {
             TheBestLogger.getInstance().logInfo(String.format("Checked elements in position %d, %d", itr - 1, itr));
             DataClass.getInstance().elem1 = itr - 1;
             DataClass.getInstance().elem2 = itr;
@@ -30,18 +30,19 @@ public class ShakerAlgo {
         return arr;
     }
 
-    public int[] bigGap(int[] arr, int gap, int itr){
-        while (itr < arr.length - 1 - gap){
-            arr = smallGap(arr,true,  itr);
+    public int[] bigGap(int[] arr, int gap, int itr) {
+        while (itr < arr.length - 1 - gap) {
+            arr = smallGap(arr, true, itr);
             itr++;
         }
-        while (itr > gap){
+        while (itr > gap) {
             arr = smallGap(arr, false, itr);
             itr--;
         }
         return arr;
     }
-    public  int[] useSort(int[] arr){
+
+    public int[] useSort(int[] arr) {
         int gap = 0, itr = 0;
         while (gap != arr.length / 2) {
             arr = bigGap(arr, gap, itr);

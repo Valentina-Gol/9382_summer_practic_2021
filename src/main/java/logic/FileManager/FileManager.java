@@ -9,11 +9,12 @@ import java.util.List;
 public class FileManager {
     /**
      * читает из файла числа, записанные по одному в строке
+     *
      * @param file объект файла для чтения чисел
      * @return массив типа int
      */
     public static int[] fileInput(File file) {
-        List<Integer> arrayL = new ArrayList<Integer>();
+        List<Integer> arrayL = new ArrayList<>();
         int[] array = new int[0];
         BufferedReader reader;
         try {
@@ -35,7 +36,7 @@ public class FileManager {
         } catch (Exception e) {
             TheBestLogger.getInstance().logException("Some trouble when reading a file");
         }
-        if (array.length > 100){
+        if (array.length > 100) {
             TheBestLogger.getInstance().logInfo("Too much size of the array(max size is 100)");
             return new int[0];
         }
@@ -44,15 +45,16 @@ public class FileManager {
 
     /**
      * производит запись массива чисел типа int в файл
-     * @param file объект файла для сохранения
+     *
+     * @param file  объект файла для сохранения
      * @param array массив чисел для сохранения
      * @return true, если запись чисел в айл произошла успешно, false в противном случае
      */
     public static boolean fileOutput(File file, int[] array) {
         try {
             FileWriter myWriter = new FileWriter(file);
-            for (int i = 0; i < array.length; i++){
-                myWriter.write(String.format("%d\n", array[i]));
+            for (int j : array) {
+                myWriter.write(String.format("%d\n", j));
             }
             myWriter.close();
             return true;
