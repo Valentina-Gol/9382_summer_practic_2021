@@ -6,8 +6,8 @@ public class DataClass {
     public int[] mainArray = null;
     public VisibleSort sort;
     public int speed = 48;
-//    private int elem1 = -1;
-//    private int elem2 = -1;
+    public int elem1 = -1;
+    public int elem2 = -1;
 
     private static DataClass dataClass = new DataClass();
     private DataClass() {}

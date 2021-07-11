@@ -1,4 +1,5 @@
 package logic.SortAlgo;
+import logic.DataClass;
 import logic.Sort.Comb;
 import org.apache.log4j.Logger;
 
@@ -9,6 +10,8 @@ public class BrushAlgo {
 
     public int[] smallGap(int[] arr, int gap, int itr){
        int j = itr + gap;
+        DataClass.getInstance().elem1 = itr;
+        DataClass.getInstance().elem1 = j;
        if (arr[itr] > arr[j]) {
             int current = arr[itr];
             arr[itr] = arr[j];

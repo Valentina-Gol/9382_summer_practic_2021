@@ -82,8 +82,14 @@ public class VisibleSort extends JPanel implements Runnable {
     public void paint(Graphics g) {
         g.clearRect(0, 0, 1500,800);
         for (int i = 0; i < arr.length; i++) {
-            g.setColor(Color.BLACK);
-            g.fillRect(i*10+100,(500-(arr[i]*4)),10, arr[i]*4);
+            if ((i == DataClass.getInstance().elem1) || (i == DataClass.getInstance().elem2)) {
+                g.setColor(Color.GREEN);
+                g.fillRect(i * 10 + 100, (500 - (arr[i] * 4)), 10, arr[i] * 4);
+            }
+            else{
+                g.setColor(Color.BLACK);
+                g.fillRect(i * 10 + 100, (500 - (arr[i] * 4)), 10, arr[i] * 4);
+            }
         }
 
     }

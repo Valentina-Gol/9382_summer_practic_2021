@@ -1,9 +1,14 @@
 package logic.SortAlgo;
+
+import logic.DataClass;
+
 public class EvenOddAlgo {
 
     public EvenOddAlgo(){}
 
     public int[] smallGap(int[] arr, int itr){
+        DataClass.getInstance().elem1 = itr;
+        DataClass.getInstance().elem1 = itr + 1;
         if (arr[itr] > arr[itr + 1]) {
             int temp = arr[itr];
             arr[itr] = arr[itr + 1];
