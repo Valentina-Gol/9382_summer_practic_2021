@@ -133,7 +133,7 @@ public class SimpleGui extends javax.swing.JFrame {
 
         //play
         playButton = new JButton("play");
-        playButton.addActionListener(new PlayListener());
+        playButton.addActionListener(new PlayButtonListener());
         playerPanel.add(playButton);
 
         //next
@@ -197,7 +197,7 @@ public class SimpleGui extends javax.swing.JFrame {
         }
     }
 
-    public class PlayListener implements ActionListener {
+    public class PlayButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             DataClass sources = DataClass.getInstance();
             try {
