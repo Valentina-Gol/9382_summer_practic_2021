@@ -8,7 +8,7 @@ public class ShakerAlgo {
 
     public int[] smallGap(int[] arr, boolean flag, int itr){
         if(flag){
-            TheBestLogger.getInstance().logInfo(String.format("Checked elements in %d, %d", itr, itr + 1));
+            TheBestLogger.getInstance().logInfo(String.format("Checked elements in position %d, %d", itr, itr + 1));
             if (arr[itr + 1] < arr[itr]) {
                 TheBestLogger.getInstance().logInfo("Swap elements!");
                 int current = arr[itr];
@@ -17,7 +17,7 @@ public class ShakerAlgo {
             }
         }
         else{
-            TheBestLogger.getInstance().logInfo(String.format("Checked elements in %d, %d", itr - 1, itr));
+            TheBestLogger.getInstance().logInfo(String.format("Checked elements in position %d, %d", itr - 1, itr));
             if (arr[itr - 1] > arr[itr]) {
                 TheBestLogger.getInstance().logInfo("Swap elements!");
                 int current = arr[itr];
