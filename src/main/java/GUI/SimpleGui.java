@@ -20,10 +20,10 @@ public class SimpleGui extends javax.swing.JFrame {
     public static SimpleGui getInstance() {
         return simpleGui;
     }
-
     public static void main(String[] args) {
         BasicConfigurator.configure();
         SimpleGui s = SimpleGui.getInstance();
+
     }
 
     private JPanel mainPanel = new JPanel();
@@ -128,7 +128,20 @@ public class SimpleGui extends javax.swing.JFrame {
 
         //reset
         JButton resetButton = new JButton("reset");
-        resetButton.addActionListener(new ResetButtonListener());
+        resetButton.addActionListener(evt -> {
+            stateMachine.resetState();
+            rightPanel.repaint();
+            sortBox.setEnabled(true);
+            nextButton.setEnabled(true);
+            playButton.setEnabled(true);
+            speedSlider.setEnabled(true);
+            textArea.setText("`" +
+                    " ");
+
+
+        });
+
+
         playerPanel.add(resetButton);
 
         //play

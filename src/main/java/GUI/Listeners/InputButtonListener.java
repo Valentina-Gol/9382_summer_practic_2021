@@ -23,7 +23,6 @@ public class InputButtonListener implements ActionListener {
      */
 
     private int[] arr = null;
-
     public void actionPerformed(ActionEvent event) {
         //int[] arr = null;
         JComboBox<String> comboBox = (JComboBox<String>) event.getSource();
@@ -85,6 +84,6 @@ public class InputButtonListener implements ActionListener {
         } catch (Exception e) {
             TheBestLogger.getInstance().logInfo("Nothing entered");
         }
-        DataClass.getInstance().mainArray = arr;
+        DataClass.getInstance().setArray(arr);
     }
 }

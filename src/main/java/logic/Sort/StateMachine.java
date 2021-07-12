@@ -14,4 +14,12 @@ public class StateMachine {
         currentState.makeStep();
         return currentState.next();
     }
+    public void resetState(){
+        DataClass.getInstance().mainArray = DataClass.getInstance().safeArray;
+        DataClass.getInstance().speed = 48;
+        DataClass.getInstance().elem1 = -1;
+        DataClass.getInstance().elem2 = -1;
+
+        currentState.stop();
+    }
 }

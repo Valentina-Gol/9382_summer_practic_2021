@@ -13,11 +13,13 @@ public class VisibleSort extends JPanel implements Runnable {
     protected int[] arr;
     private int speed;
     private boolean pauseThreadFlag;
+    private boolean isRunning;
 
     VisibleSort() {
         itr = 0;
         gap = 0;
         pauseThreadFlag = false;
+        isRunning = false;
     }
 
     public boolean next() {
@@ -28,9 +30,10 @@ public class VisibleSort extends JPanel implements Runnable {
 
     @Override
     public void run() {
+        isRunning = true;
         try {
             while (true) {
-                if (!thread.isInterrupted()) {
+                if (!thread.isInterrupted() & isRunning) {
                     checkForPaused();
                     doSort();
                     repaint();
@@ -42,13 +45,20 @@ public class VisibleSort extends JPanel implements Runnable {
                         }
                     } else
                         pauseThread();
-                } else return;
+                } else {
+                    isRunning = false;
+                    return;
+                }
             }
         } catch (Exception e) {
             TheBestLogger.getInstance().logException(e.getMessage());
         }
     }
-
+    public void stop(){
+        isRunning = false;
+        arr = DataClass.getInstance().mainArray;
+        speed = DataClass.getInstance().speed;
+    }
     public void startSort(int value) {
         TheBestLogger.getInstance().logInfo("Sort was started!");
         arr = DataClass.getInstance().mainArray;
